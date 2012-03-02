@@ -1,0 +1,31 @@
+<h1>{{post.title}}</h1>
+
+<p>{{post.body}} </p>
+
+<h3>Comments</h3>
+<ul>
+{% for comment in comments %}
+<li>
+<p><i>{{comment.text}}</i></p>
+<p><strong>-{{comment.author}}</strong></p>
+</li>
+{% endfor %}
+</ul>
+
+<h4>Add Comment</h4>
+<form action='/{{post.id}}/add_comment/' method="post">
+{% csrf_token %}
+<p>
+<label for='new_comment_text' >Comment:</label>
+<input name='new_comment_text' type='text' id='new_comment_text' />
+</p>
+
+<p>
+<label for='new_comment_author' >Author:</label>
+<input name='new_comment_author' type='text' id='new_comment_author' />
+</p>
+
+<input type='submit' value='Comment' />
+</form>
+
+<a href="/">Home</a> 
