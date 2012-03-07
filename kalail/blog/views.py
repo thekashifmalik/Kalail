@@ -16,11 +16,15 @@ def show_post(request, post_id):
 	return render_to_response('blog/show_post.html', {'post': post, 'comments': comments}, context_instance=RequestContext(request))
 
 def add_comment(request, post_id):
-	new_comment_text = request.POST['new_comment_text']
-	new_comment_author = request.POST['new_comment_author']
-	new_comment_post = Post.objects.get(id=post_id)
-	new_comment = Comment(post=new_comment_post, text=new_comment_text, author=new_comment_author)
-	new_comment.save()
+	# Process captcha.
+	new_comment_captcha = request.POST['new_comment_captcha']
+	if new_comment_captcha.lower() == 'red':
+		new_comment_text = request.POST['new_comment_text']
+		new_comment_author = request.POST['new_comment_author']
+		new_comment_post = Post.objects.get(id=post_id)
+		new_comment = Comment(post=new_comment_post, text=new_comment_text, author=new_comment_author)
+		new_comment.save()
+
 	return HttpResponseRedirect(reverse('blog.views.show_post', args=(post_id)))
 
 def about(request):

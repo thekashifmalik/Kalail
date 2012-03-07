@@ -13,19 +13,24 @@
 </ul>
 
 <h4>Add Comment</h4>
-<form action='/{{post.id}}/add_comment/' method="post">
-{% csrf_token %}
-<p>
-<label for='new_comment_text' >Comment:</label>
-<input name='new_comment_text' type='text' id='new_comment_text' />
-</p>
+	<form action='/{{post.id}}/add_comment/' method="post">
+	{% csrf_token %}
+	<p>
+		<label for='new_comment_text' >Comment:</label>
+		<input name='new_comment_text' type='text' id='new_comment_text' />
+	</p>
 
-<p>
-<label for='new_comment_author' >Author:</label>
-<input name='new_comment_author' type='text' id='new_comment_author' />
-</p>
+	<p>
+		<label for='new_comment_author' >Author:</label>
+		<input name='new_comment_author' type='text' id='new_comment_author' />
+	</p>
 
-<input type='submit' value='Comment' />
+	<p>
+		<label for='new_comment_captcha' >What color is this box?:</label>
+		<input name ='new_comment_captcha' type 'text' style='color: #FFFFFF; font-weight: bold; background-color: #CC0000;' id='new_comment_author' />
+	</p>
+
+	<input type='submit' value='Comment' />
 </form>
 
 <a href="/">Home</a> 
