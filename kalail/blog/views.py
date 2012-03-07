@@ -20,10 +20,16 @@ def add_comment(request, post_id):
 	new_comment_captcha = request.POST['new_comment_captcha']
 	if new_comment_captcha.lower() == 'red':
 		new_comment_text = request.POST['new_comment_text']
-		new_comment_author = request.POST['new_comment_author']
-		new_comment_post = Post.objects.get(id=post_id)
-		new_comment = Comment(post=new_comment_post, text=new_comment_text, author=new_comment_author)
-		new_comment.save()
+		# Deal with empty comment.
+		if new_comment_text != '':
+			new_comment_author = request.POST['new_comment_author']
+			# Deal with empty author.
+			if new_comment_author == '':
+				new_comment_author = 'Anonymous'
+			new_comment_post = Post.objects.get(id=post_id)
+			new_comment = Comment(post=new_comment_post, text=new_comment_text, author=new_comment_author)
+		
+			new_comment.save()
 
 	return HttpResponseRedirect(reverse('blog.views.show_post', args=(post_id)))
 
