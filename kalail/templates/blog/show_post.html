@@ -1,5 +1,5 @@
 <h1>{{post.title}}</h1>
-
+<h5>{{post.created_on}}</h5>
 <p>{{post.body|linebreaks}} </p>
 
 <h3>Comments</h3>
@@ -16,22 +16,22 @@
 
  {# Add error here. #}
 
-<form action='/{{post.id}}/add_comment/' method="post">
+<form action= {% url blog.views.add_comment post_id=post.id %} method="post">
 	{% csrf_token %}
 	<p>
 		<label for='new_comment_text' >Comment:</label>
 		<input name='new_comment_text' type='text' id='new_comment_text' />
 	</p>
-		<p>
+	<p>
 		<label for='new_comment_author' >Author:</label>
 		<input name='new_comment_author' type='text' id='new_comment_author' />
 	</p>
-		<p>
+	<p>
 		<label for='new_comment_captcha' >What color is this box?:</label>
-		<input name ='new_comment_captcha' type 'text' style='color: #FFFFFF; font-weight: bold; background-color: #CC0000;' id='new_comment_author' />
+		<input name ='new_comment_captcha' type 'text' style='color: #FFFFFF; font-weight: bold; background-color: #CC0000;' id='new_comment_captcha' />
 	</p>
 
 	<input type='submit' value='Comment' />
 </form>
 
-<a href="/">Home</a> 
+<a href= {% url blog.views.index %} >Home</a> 
