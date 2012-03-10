@@ -23,18 +23,18 @@ class views_testcase(TestCase):
 
 	def test_add_comment_success(self):
 		test_comment = Comment(text='This is a test!', author='Tester')
-		response = self.client.post('/1/add_comment/', {'new_comment_text': test_comment.text, 'new_comment_author': test_comment.author, 'new_comment_captcha': 'red' })
+		response = self.client.post('/blog/1/add_comment/', {'new_comment_text': test_comment.text, 'new_comment_author': test_comment.author, 'new_comment_captcha': 'red' })
 		self.assertEqual(response.status_code, 302)
-		self.assertEqual(response['location'], 'http://testserver/1/')
+		self.assertEqual(response['location'], 'http://testserver/blog/1/')
 		post = Post.objects.get(pk=1)
 		self.assertEqual(post.comment_set.latest('created_on').text, test_comment.text)
 		self.assertEqual(post.comment_set.latest('created_on').author, test_comment.author)
 
 	def test_add_comment_fail(self):
 		test_comment = Comment(text='This is a test!', author='Tester')
-		response = self.client.post('/1/add_comment/', {'new_comment_text': test_comment.text, 'new_comment_author': test_comment.author, 'new_comment_captcha': 'blue' })
+		response = self.client.post('/blog/1/add_comment/', {'new_comment_text': test_comment.text, 'new_comment_author': test_comment.author, 'new_comment_captcha': 'blue' })
 		self.assertEqual(response.status_code, 302)
-		self.assertEqual(response['location'], 'http://testserver/1/')
+		self.assertEqual(response['location'], 'http://testserver/blog/1/')
 		post = Post.objects.get(pk=1)
 		self.assertNotEqual(post.comment_set.latest('created_on').text, test_comment.text)
 		self.assertNotEqual(post.comment_set.latest('created_on').author, test_comment.author)
