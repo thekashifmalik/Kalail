@@ -13,6 +13,9 @@ class views_testcase(TestCase):
 	def test_show_post_success(self):
 		response = self.client.get(reverse('blog.views.show_post', args=('1')))
 		self.assertEqual(response.status_code, 200)
+		test_post = Post.objects.get(pk=1)
+		self.assertContains(response, test_post.title)
+		self.assertContains(response, test_post.body)
 
 	def test_show_post_fail(self):
 		response = self.client.get('/-1/')
