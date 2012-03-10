@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>{{post.title}}</h1>
 <h5>{{post.created_on}}</h5>
 <p>{{post.body|urlize|linebreaks }} </p>
@@ -8,6 +10,10 @@
 <li>
 <p><i>{{comment.text}}</i></p>
 <p><strong>-{{comment.author}}</strong></p>
+</li>
+{% empty %}
+<li>
+<p>There are no comments yet!</p>
 </li>
 {% endfor %}
 </ul>
@@ -34,4 +40,4 @@
 	<input type='submit' value='Comment' />
 </form>
 
-<a href= {% url blog.views.index %} >Home</a> 
+{% endblock content %}

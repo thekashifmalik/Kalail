@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^', include('blog.urls')),
+	url(r'^blog/', include('blog.urls')),
     # Examples:
     # url(r'^$', 'kalail.views.home', name='home'),
     # url(r'^kalail/', include('kalail.foo.urls')),
