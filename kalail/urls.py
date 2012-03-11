@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^blog/', include('blog.urls')),
-	url(r'^version/', 'versioning.views.index'),
+	url(r'^versions/', 'versioning.views.index'),
     # Examples:
     # url(r'^$', 'kalail.views.home', name='home'),
     # url(r'^kalail/', include('kalail.foo.urls')),

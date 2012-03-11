@@ -7,9 +7,18 @@
 <body>
     <div id="header">
         <ul>
-            <a href= {% url blog.views.index %} ><p>Blog</a></p>
-            <a href= {% url blog.views.about %} ><p>About</a></p>
-            <a href= {% url blog.views.contact %} ><p>Contact</a></p>
+            <li>
+                <a href= {% url blog.views.index %} >Blog</a>
+            </li>
+            <li>
+                <a href= {% url blog.views.about %} >About</a>
+            </li>
+            <li>
+                <a href= {% url blog.views.contact %} >Contact</a>
+            </li>
+            <li>
+                <a href= {% url versioning.views.index %} >Versions</a>
+            </li>
         </ul>
     </div>
 
