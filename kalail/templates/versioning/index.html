@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Site Versions</h1>
+
+<ul>
+{% for version in all_versions %}
+<li>
+<h2>{{version.number}}</h2>
+<p>{{version.features|linebreaks}}</p>
+</li>
+{% endfor %}
+</ul>
+{% endblock content %}
