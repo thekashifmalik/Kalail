@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <title>{% block title %}Kalail{% endblock %}</title>
+    <LINK href="{% get_static_prefix %}styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
