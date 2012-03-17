@@ -7,24 +7,24 @@
 </head>
 
 <body>
-    <div id="header">
+    <div class="header">
         <ul>
-            <li>
-                <a href= {% url blog.views.index %} >Blog</a>
+            <li class="header_item">
+                <a class="header_item_link" href= {% url blog.views.index %} >Blog</a>
             </li>
-            <li>
-                <a href= {% url main.views.about %} >About</a>
+            <li class="header_item">
+                <a class="header_item_link" href= {% url main.views.about %} >About</a>
             </li>
-            <li>
-                <a href= {% url main.views.contact %} >Contact</a>
+            <li class="header_item">
+                <a class="header_item_link" href= {% url main.views.contact %} >Contact</a>
             </li>
-            <li>
-                <a href= {% url versioning.views.index %} >Versions</a>
+            <li class="header_item">
+                <a class="header_item_link" href= {% url versioning.views.index %} >Versions</a>
             </li>
         </ul>
     </div>
 
-    <div id="content">
+    <div class="content">
         {% block content %}{% endblock %}
     </div>
 </body>
