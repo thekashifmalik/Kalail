@@ -3,7 +3,7 @@
 <head>
     {% load static %}
     <title>{% block title %}Kalail{% endblock %}</title>
-    <LINK href="{% get_static_prefix %}css/styles.css" rel="stylesheet" type="text/css">
+    <link href="{% get_static_prefix %}css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -13,10 +13,10 @@
                 <a href= {% url blog.views.index %} >Blog</a>
             </li>
             <li>
-                <a href= {% url blog.views.about %} >About</a>
+                <a href= {% url main.views.about %} >About</a>
             </li>
             <li>
-                <a href= {% url blog.views.contact %} >Contact</a>
+                <a href= {% url main.views.contact %} >Contact</a>
             </li>
             <li>
                 <a href= {% url versioning.views.index %} >Versions</a>

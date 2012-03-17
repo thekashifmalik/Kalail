@@ -32,9 +32,3 @@ def add_comment(request, post_id):
 			new_comment.save()
 
 	return HttpResponseRedirect(reverse('blog.views.show_post', args=(post_id)))
-
-def about(request):
-	return render_to_response('blog/about.html')
-
-def contact(request):
-	return render_to_response('blog/contact.html')
