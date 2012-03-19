@@ -11,7 +11,7 @@ a
 }
 
 
-h1,h2,h3,h4
+h1,h2,h3,h4,h5
 {
 	font-family:"segoe ui";
 	color: rgb(255,255,255);
@@ -24,7 +24,7 @@ h1,h2,h3,h4
 	top:0px;
 	right:0%;
 	position: fixed;
-	background-color: rgb(255,255,255);
+	background-color: rgb(170,90,20);
 	border-bottom: 10px solid rgb(10,10,10);
 	border-top: 10px solid rgb(10,10,10);
 }
@@ -39,11 +39,11 @@ h1,h2,h3,h4
 .header_item_link
 {
 	font-family:"segoe ui";
-	color: rgb(220,220,220);
-	background-color: rgb(0,0,0);
+	color: rgb(10,10,10);
+	background-color: rgb(235,227,203);
 	text-shadow: rgb(255,255,255) 0px 0px 5px;
 	border-radius: 10px;
-	border-color: rgb(10,10,10);
+	border-color: rgb(235,227,203);
 	border-style: solid;
 	border-width: 5px;
 	text-decoration:  none;
