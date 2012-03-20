@@ -1,19 +1,16 @@
 p
 {
-	font-family:"segoe ui";
 	color: rgb(220,220,220);
 }
 
 a
 {
-	font-family:"segoe ui";
 	color: rgb(160,40,40);
 }
 
 
 h1,h2,h3,h4,h5
 {
-	font-family:"segoe ui";
 	color: rgb(255,255,255);
 }
 
@@ -31,14 +28,12 @@ h1,h2,h3,h4,h5
 
 .header_item
 {
-	font-family:"segoe ui";
 	display: inline;
 	padding-left: 20px;
 }
 
 .header_item_link
 {
-	font-family:"segoe ui";
 	color: rgb(10,10,10);
 	background-color: rgb(235,227,203);
 	text-shadow: rgb(255,255,255) 0px 0px 5px;
@@ -55,8 +50,15 @@ h1,h2,h3,h4,h5
 	margin-top: 75px;
 }
 
+@font-face
+{
+	font-family: "Segoe UI";
+ 	src: url("fonts/segoeui.ttf");
+}
+
 body
 {
+	font-family:"Segoe UI",sans-serif;
 	width:720px;
 	right:50%;
 	background-color: rgb(25,25,25);
