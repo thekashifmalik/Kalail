@@ -7,25 +7,42 @@
 </head>
 
 <body>
-    <div class="header">
-        <ul>
-            <li class="header_item">
-                <b><a class="header_item_link" href= {% url blog.views.index %} >Blog</a></b>
-            </li>
-            <li class="header_item">
-                <b><a class="header_item_link" href= {% url main.views.about %} >About</a></b>
-            </li>
-            <li class="header_item">
-                <b><a class="header_item_link" href= {% url main.views.contact %} >Contact</a></b>
-            </li>
-            <li class="header_item">
-                <b><a class="header_item_link" href= {% url versioning.views.index %} >Versions</a></b>
-            </li>
-        </ul>
-    </div>
+    <div class="body-centered">
+        <div class="header">
+            <ul>
+                <li class="header_item">
+                    <strong><a class="header_item_link" href= {% url blog.views.index %} >Blog</a></strong>
+                </li>
+                <li class="header_item">
+                    <strong><a class="header_item_link" href= {% url main.views.about %} >About</a></strong>
+                </li>
+                <li class="header_item">
+                    <strong><a class="header_item_link" href= {% url main.views.contact %} >Contact</a></strong>
+                </li>
+                <li class="header_item">
+                    <strong><a class="header_item_link" href= {% url versioning.views.index %} >Versions</a></strong>
+                </li>
+            </ul>
+        </div>
 
-    <div class="content">
-        {% block content %}{% endblock %}
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <div class="footer">
+            <ul>
+                <li class="header_item">
+                    <a class="footer_item_link" href= {% url blog.views.index %} >GitHub</a>
+                </li>
+                <li class="header_item">
+                    <a class="footer_item_link" href= {% url main.views.about %} >Facebook</a>
+                </li>
+                <li class="header_item">
+                    <a class="footer_item_link" href= {% url main.views.contact %} >Twitter</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </body>
 </html>
