@@ -16,94 +16,67 @@ h1,h2,h3,h4,h5
 
 .header
 {
-	width: 880px;
-	height:50px;
-	top:0px;
-	position: fixed;
-	background-color: rgb(170,90,20);
-	border-bottom: 10px solid rgb(10,10,10);
-	border-top: 10px solid rgb(10,10,10);
-	border-right: 10px solid rgb(10,10,10);
-	border-left: 10px solid rgb(10,10,10);
+	margin: 0px 0px 0px 0px;
+	padding: 1px 25px 10px 25px;
+	height: 140px;
+	/*border-style: none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset;*/
+	background-color: rgb(0,0,0);
+	border-bottom: 1px solid rgb(255,255,255);
+	/*background-color: rgb(170,90,20);*/
 }
 
 .header_item
 {
 	display: inline;
-	padding-left: 15px;
+	padding-right: 15px;
+	/*padding-left: 15px;*/
 }
 
 .header_item_link
 {
-	background-color: rgb(235,227,203);
 	border-radius: 15px;
-	border-color: rgb(235,227,203);
-	border-style: solid;
-	border-width: 5px;
-	padding:2px;
-
-	color: rgb(10,10,10);
-	text-shadow: rgb(100,100,100) 0px 0px 15px;
-	text-decoration:  none;
-
-}
-
-.footer
-{
-	width: 880px;
-	height: 50px;
-	bottom: 0%;
-
-	position: fixed;
-
-	/*background-color: rgb(40,10,2);*/
-	background-color: rgb(0,0,0);
-	border-bottom: 10px solid rgb(0,0,0);
-	border-top: 10px solid rgb(0,0,0);
-	border-right: 10px solid rgb(0,0,0);
-	border-left: 10px solid rgb(0,0,0);
-}
-
-.footer_item_link
-{
-	border-radius: 7px;
 	border-color: rgb(255,255,255);
 	border-style: solid;
-	border-width: 1px;
-	padding:5px;
-	color: rgb(255,255,255);
-	text-decoration:  none;
+	border-width: 2px;
+	padding:6px;
 
+	color: rgb(255,255,255);
+	/*text-shadow: rgb(100,100,100) 0px 0px 15px;*/
+	text-decoration:  none;
+}
+
+.header_item_link:hover
+{
+	background-color: rgb(255,255,255);
+	color: rgb(0,0,0);
 }
 
 .content
 {
-	height: 100%;
-	margin: 0px 25px 25px 25px;
-	bottom:0px;
+	margin: 0px 25px 0px 25px;
+	padding-bottom: 25px;
 }
 
 .body-centered
 {
-	min-height:100%;
+	height: auto;
 
 	width: 900px;
 	margin: 0% auto 0%;
-	padding: 70px 0px 70px 0px;
 	background-color: rgb(25,25,25);
 }
 
 body
 {
 	margin: 0% 0% 0% 0%;
-	min-height: 100%;
+	height: auto;
 	font-family:"Segoe UI",sans-serif;
 	background-color: rgb(13,13,13);
 }
 
 html
 {
-	height: 100%;
+	height: auto;
 }
 
 

@@ -9,6 +9,7 @@
 <body>
     <div class="body-centered">
         <div class="header">
+            <h1>KALAIL</h1>
             <ul>
                 <li class="header_item">
                     <strong><a class="header_item_link" href= {% url blog.views.index %} >Blog</a></strong>
@@ -28,21 +29,6 @@
         <div class="content">
             {% block content %}{% endblock %}
         </div>
-
-        <div class="footer">
-            <ul>
-                <li class="header_item">
-                    <a class="footer_item_link" href= {% url blog.views.index %} >GitHub</a>
-                </li>
-                <li class="header_item">
-                    <a class="footer_item_link" href= {% url main.views.about %} >Facebook</a>
-                </li>
-                <li class="header_item">
-                    <a class="footer_item_link" href= {% url main.views.contact %} >Twitter</a>
-                </li>
-            </ul>
-        </div>
-
     </div>
 </body>
 </html>
