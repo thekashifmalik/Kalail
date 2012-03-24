@@ -6,7 +6,7 @@
 {% for version in all_versions %}
 <li>
 <h2>{{version.number}}</h2>
-<p>{{version.created_on}}</p>
+<p><em>{{version.created_on}}</em></p>
 <p>{{version.features|linebreaks}}</p>
 </li>
 {% endfor %}
