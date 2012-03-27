@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'blog',
     'versioning',
     'south',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
