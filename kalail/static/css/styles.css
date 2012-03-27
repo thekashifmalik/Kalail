@@ -86,3 +86,22 @@ html
 	font-family: "Segoe UI";
  	src: url("fonts/segoeui.ttf");
 }
+
+label
+{
+	width: 175px;
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.submit
+{
+	margin-left: 250px;
+}
+
+.captcha
+{
+	background-color: rgb(175,20,20);
+	color: white;
+}
