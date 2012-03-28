@@ -1,4 +1,5 @@
 # Django settings for kalail project.
+import socket
 
 if socket.gethostname() == 'Kalail-PC':
    DEBUG = True
