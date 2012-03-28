@@ -1,7 +1,11 @@
 # Django settings for kalail project.
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+if socket.gethostname() == 'Kalail-PC':
+   DEBUG = True
+   TEMPLATE_DEBUG = True
+else:
+   DEBUG = True
+   TEMPLATE_DEBUG = True
 
 import os
 import django
