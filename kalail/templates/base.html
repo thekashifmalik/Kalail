@@ -2,19 +2,14 @@
 <html lang="en">
 <head>
     {% load static %}
-    {% load compress %}
 
     <title>{% block title %}Kalail{% endblock %}</title>
 
-    {% compress css %}
     <link href="{% get_static_prefix %}css/styles.css" rel="stylesheet" type="text/css">
     {% block css %}{% endblock css %}
-    {% endcompress %}
 
-    {% compress js %}
     <script src="{% get_static_prefix %}js/jquery-1.7.2.js" type="text/javascript"></script>
     {% block js %}{% endblock js %}
-    {% endcompress %}
     
     {% block head %}{% endblock head %}
 </head>
