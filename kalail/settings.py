@@ -2,11 +2,12 @@
 import socket
 
 if socket.gethostname() == 'Kalail-PC':
-   DEBUG = True
-   TEMPLATE_DEBUG = True
+    DEBUG = TEMPLATE_DEBUG = True
+    STATIC_URL = '/static/'
 else:
-   DEBUG = True
-   TEMPLATE_DEBUG = True
+    DEBUG = TEMPLATE_DEBUG = False
+    STATIC_URL = 'https://s3.amazonaws.com/kalail_s3_bucket/'
+
 
 import os
 import django
@@ -71,16 +72,17 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = relative_path(SITE_ROOT, 'static_root')
+#STATIC_ROOT = relative_path(SITE_ROOT, 'static')
+STATIC_ROOT = '/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -140,6 +142,7 @@ INSTALLED_APPS = (
     'versioning',
     'south',
     'gunicorn',
+    'storages',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -164,3 +167,9 @@ LOGGING = {
         },
     }
 }
+
+STATICFILES_STORAGE = DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+AWS_ACCESS_KEY_ID = 'AKIAI7EOYMFRURZPCUKA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'kalail_s3_bucket'
