@@ -108,5 +108,7 @@ label
 
 .kalail_title
 {
+	color: white;
+	text-decoration:  none;
 	text-shadow: white 0px 0px 35px;
 }

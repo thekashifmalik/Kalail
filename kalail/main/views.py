@@ -6,7 +6,8 @@ from django.template import RequestContext
 
 
 def index(request):
-	return HttpResponseRedirect(reverse('blog.views.index'))
+	return render_to_response('main/index.html', context_instance=RequestContext(request))
+	#return HttpResponseRedirect(reverse('blog.views.index'))
 
 def about(request):
 	return render_to_response('main/about.html', context_instance=RequestContext(request))
