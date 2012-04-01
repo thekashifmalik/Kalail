@@ -8,7 +8,7 @@ from blog.models import Post, Comment
 
 def index(request):
 	all_posts = Post.objects.all().order_by('-created_on')
-	return render_to_response('blog/index.html', {'all_posts': all_posts})
+	return render_to_response('blog/index.html', {'all_posts': all_posts}, context_instance=RequestContext(request))
 
 def show_post(request, post_id):
 	post = get_object_or_404(Post, id=post_id)

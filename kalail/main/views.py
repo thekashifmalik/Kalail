@@ -9,7 +9,7 @@ def index(request):
 	return HttpResponseRedirect(reverse('blog.views.index'))
 
 def about(request):
-	return render_to_response('main/about.html')
+	return render_to_response('main/about.html', context_instance=RequestContext(request))
 
 def contact(request):
-	return render_to_response('main/contact.html')
+	return render_to_response('main/contact.html', context_instance=RequestContext(request))
