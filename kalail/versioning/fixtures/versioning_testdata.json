@@ -1,0 +1,165 @@
+[
+
+    {
+
+        "pk": 1, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-11 00:46:54", 
+
+            "number": "v0.1.0", 
+
+            "features": "First release, with fully working comments and posts."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 2, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-11 00:47:22", 
+
+            "number": "v0.1.1", 
+
+            "features": "Added test framework. Removed all hardcoded links. Added more formatting to posts."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 3, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-11 00:47:43", 
+
+            "number": "v0.1.2", 
+
+            "features": "Separated blog from main site. Currently main directs to blog. Added versioning to site."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 4, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-11 01:28:12", 
+
+            "number": "v0.1.3", 
+
+            "features": "Added schema migrations."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 5, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-19 06:00:48", 
+
+            "number": "v0.2.0", 
+
+            "features": "Added CSS formatting with basic static file serving. Separated main site into independent application."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 6, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-20 06:18:22", 
+
+            "number": "v0.2.1", 
+
+            "features": "Embedded font so it shows when viewing on UNIX systems."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 7, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-24 08:17:43", 
+
+            "number": "v0.2.2", 
+
+            "features": "Changed site style, made it centered, and set header to be static, not floating."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 8, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-24 10:17:47", 
+
+            "number": "v0.2.3", 
+
+            "features": "Changed to a more understated color scheme. Added RSS syndication."
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 9, 
+
+        "model": "versioning.version", 
+
+        "fields": {
+
+            "created_on": "2012-03-29 01:04:36", 
+
+            "number": "v0.3.0", 
+
+            "features": "Moved to a Production ready server; Gunicorn with Amazon S3 serving assets.\r\nAdded jQuery support and updated 404 page."
+
+        }
+
+    }
+
+]

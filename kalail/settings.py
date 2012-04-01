@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'main',
     'blog',
     'versioning',
     'south',
@@ -168,8 +169,8 @@ LOGGING = {
     }
 }
 
+# Amazon S3 setting
 STATICFILES_STORAGE = DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
 AWS_ACCESS_KEY_ID = 'AKIAI7EOYMFRURZPCUKA'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'kalail_s3_bucket'

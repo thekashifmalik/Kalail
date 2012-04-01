@@ -1,0 +1,453 @@
+[
+
+    {
+
+        "pk": 1, 
+
+        "model": "blog.post", 
+
+        "fields": {
+
+            "body": "Creating a blog is hard. Updating a blog is even harder. By that merit creating a blog from scratch, no Wordpress, no nothing, must be incredibly difficult. But that's what I'm doing here.\r\n\r\nWelcome to Kalail, a web based experiment for me. I'm going to be using this space to learn about and develop my own website using Django. Heck, I might even write some blog posts documenting the process along the way.\r\n\r\nHere goes.\r\n\r\nFirst thing's first; Hi, my name is Kalail.", 
+
+            "created_on": "2012-03-02 05:14:55", 
+
+            "title": "First Post!"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 2, 
+
+        "model": "blog.post", 
+
+        "fields": {
+
+            "body": "What's better than an all-nighter? That's right, 2 all-nighters. In a row.\r\n\r\n'Stagecoach' is a real time film production project management service being developed by the as-yet unnamed start-up I'm involved with. The service is platform agnostic; the thinking being a complete experience with full control over every aspect regardless of the device you are on. Whatsup 'shameless plug'? Let me drop all pretense and just ask you to visit 'http://stagecoachdev.herokuapp.com/' and check it out.\r\n\r\nRight now I'm engaged in the production of a video/animation to demonstrate our service in action. Instead of just recording the screen, to enable greater creative control I'm taking screenshots and then animating them in After Effects.\r\n\r\nI really wish I'd just screen recorded.", 
+
+            "created_on": "2012-03-03 19:05:47", 
+
+            "title": "Stagecoaching"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 3, 
+
+        "model": "blog.post", 
+
+        "fields": {
+
+            "body": "2 all-nighters and 1 semi all-nighter's worth of work resulting in a well received video presentation; I'd say the animation was a success.\r\n\r\nMy stagecoach team presented our product today. It certainly went better than I thought it would; not only did we receive the best response from the judges, we also got plenty of new ideas and directions to take our service. Just about every judge on the panel could see some sort of horizontal or vertical integration opportunity.\r\n\r\nDecidedly, my favorite thing about about the feedback we got was the judges' excitement at what it is we could potentially accomplish. Nothing beats knowing that others share the excitement that you have about something you are creating.\r\n\r\n*insert Huge ego boost.", 
+
+            "created_on": "2012-03-06 21:44:45", 
+
+            "title": "Stagecoached"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 4, 
+
+        "model": "blog.post", 
+
+        "fields": {
+
+            "body": "South. Thank you.\r\n\r\nFor anyone who has worked on a data centered Django project knows, the framework does not come with built in schema migrations. What this means is that whilst you can sync up your database after adding a model definition, further changes to it do not carry over. Perhaps the only way to do that would be to completely reset the database, ala 'python manage.py flush'.\r\n\r\nWhen you have a project running live, with data already present in the database, this is simply not an option, lest you - export - reset - re-import.\r\n\r\nNo.\r\n\r\nEnter 'South', the Django community's go-to migration framework. It's simple, quick and easy to set up. It's even trivial to slap it on to an already existing project. What I don't understand is why it hasn't been integrated into the Django core. The author, Andrew Godwin, maintains that by not integrating South into the Django core and locking the framework into a specific migrations solution, the community would benefit from the existence of choice as well as faster development times. Instead, he opted to merge some of South's migration conventions into the Django core, standardizing the process to some extent, perhaps making the workflow easier for alternative solutions.\r\n\r\nRegardless, schema migrations are such an essential part of any web framework that I think the Django community should demand the inclusion of one with the package, be it South or some other. It could be swappable much like the Django template language, but present nevertheless.\r\n\r\nWell, that's my 2 cents.\r\n\r\nIn other news, gpeal.heroku.com is live. Let the games begin.", 
+
+            "created_on": "2012-03-11 04:32:09", 
+
+            "title": "Migrating to the South"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 5, 
+
+        "model": "blog.post", 
+
+        "fields": {
+
+            "body": "So I finally decided to add some CSS styling to the site. This would be my first experience with actual CSS work, disregarding some prior minor alteration work.\r\n\r\nThe verdict; CSS can be extremely finicky.\r\n\r\nWhile the majority of styling work can be  accomplished in a rather easy-to-do manner, a lot of content placement simply does not work, at least as expected. This becomes especially apparent when trying to create floating elements. For me this occurred when creating a floating menu for this site; I thought it might be interesting to have a menu floating at the top the browser, much like the navigation bars you see on your phone apps.\r\n\r\nSetting up the menu was rather simple, simply adding a 'float' tag did the trick. However, then came the problem of moving everything else on the page lower so it didn't get obstructed by the menu. That became a little trickier. The content that needed to be moved down was text and headings, except because I had a division called 'body-centered' that centered this content in the middle of the browser, it moved what I called blank space down as well, creating a scroll bar even for pages that had only a few lines of content. Scrolling down only revealed said blank space.\r\n\r\nIt seems that depending on the mood of the 'Styling God', the value obtained by the property 'height=100%' fluctuates between the height of the browser window, and the height of the container object. Not only that, but it acts different depending on which browser you are using. In fact, sometimes it became erratic enough that my 'body-centered' object, which was most certainly nested within 'body', became larger than the 'body' object. Weird.\r\n\r\nMy solution, and eventual salvation, was to go back to the drawing board and redesign the site. I dropped the idea of the floating menu and went with what you are probably looking at now.\r\n\r\nCSS works, but it has some really frustrating quirks. My bet is that these anomalies are more a result of the way our browsers interpret stylesheets, and not a flaw within the CSS language itself.\r\n\r\nRegardless, there is a certain elegance that comes with the way the layout is, well, laid out using styles. Though that may be more of an HTML thing than CSS.\r\n\r\nI now have an RSS feed that you can subscribe to. I honestly don't know why I don't use RSS for all my favorite blogs, but I will now.\r\n\r\nAlso, as of today, I am now running a production server, Gunicorn, and serving all my static assets using Amazon S3. Takes a bit of work, but really simple in hindsight. Definitely warrants a longer discussion.", 
+
+            "created_on": "2012-03-29 01:40:44", 
+
+            "title": "CSS stands for Can't Setup Styling"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 1, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Whatsup 'got comments working' ?", 
+
+            "post": 1, 
+
+            "created_on": "2012-03-02 05:16:17", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 3, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "fuck off", 
+
+            "post": 1, 
+
+            "created_on": "2012-03-02 05:41:49", 
+
+            "author": "your mom"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 4, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "tittiesss", 
+
+            "post": 1, 
+
+            "created_on": "2012-03-02 18:32:13", 
+
+            "author": "jonjon"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 5, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "anal perffffff", 
+
+            "post": 1, 
+
+            "created_on": "2012-03-02 22:41:03", 
+
+            "author": "Taylor"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 6, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Gotta get the paragraph formatting working.", 
+
+            "post": 2, 
+
+            "created_on": "2012-03-03 19:06:39", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 7, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "This is going to be huge!", 
+
+            "post": 2, 
+
+            "created_on": "2012-03-04 00:29:25", 
+
+            "author": "Gabe"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 8, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Added color based captcha. Feedback?", 
+
+            "post": 3, 
+
+            "created_on": "2012-03-06 21:46:17", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 9, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Fixed formatting!", 
+
+            "post": 2, 
+
+            "created_on": "2012-03-06 21:58:48", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 10, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Love the site. Really a design masterpiece", 
+
+            "post": 3, 
+
+            "created_on": "2012-03-08 13:55:45", 
+
+            "author": "Gabe"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 11, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Also, I think the red box should be sepereate from the box you type into", 
+
+            "post": 3, 
+
+            "created_on": "2012-03-08 13:56:02", 
+
+            "author": "Gabe"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 12, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "You think so? Like you type underneath it or something? What do you think about the color captcha though?", 
+
+            "post": 3, 
+
+            "created_on": "2012-03-08 14:00:20", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 13, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "You'll have to show me sometime!", 
+
+            "post": 4, 
+
+            "created_on": "2012-03-11 22:28:40", 
+
+            "author": "Gabe"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 14, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Show you what?", 
+
+            "post": 4, 
+
+            "created_on": "2012-03-13 03:39:10", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 15, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "I agree with Gabe. When I first opened the site I was confused as to where I should type it. ", 
+
+            "post": 3, 
+
+            "created_on": "2012-03-15 08:40:00", 
+
+            "author": "Maddypie"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 16, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "You know, I was thinking why not try to add a date to the comments. It seems organized. Besides, I like it :)", 
+
+            "post": 4, 
+
+            "created_on": "2012-03-15 08:47:36", 
+
+            "author": "Maddypie"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 17, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Hmmm That's a good idea.  I'm going to add that to my ToDo.", 
+
+            "post": 4, 
+
+            "created_on": "2012-03-15 20:20:30", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 18, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Alright. Adding to ToDo.", 
+
+            "post": 3, 
+
+            "created_on": "2012-03-15 21:13:46", 
+
+            "author": "Kalail"
+
+        }
+
+    }, 
+
+    {
+
+        "pk": 19, 
+
+        "model": "blog.comment", 
+
+        "fields": {
+
+            "text": "Done", 
+
+            "post": 4, 
+
+            "created_on": "2012-03-29 01:58:15", 
+
+            "author": "Kalail"
+
+        }
+
+    }
+
+]
