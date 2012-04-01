@@ -116,6 +116,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'kalail.urls'
@@ -144,6 +145,7 @@ INSTALLED_APPS = (
     'south',
     'gunicorn',
     'storages',
+    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging
