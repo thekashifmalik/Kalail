@@ -4,6 +4,14 @@ from django.core.urlresolvers import reverse
 
 class main_testcase(TestCase):
 
+	def test_index_response_success(self):
+		response = self.client.get(reverse('main.views.index'))
+		self.assertEqual(response.status_code, 200)
+	
+	def test_index_content_success(self):
+		response = self.client.get(reverse('main.views.index'))
+		self.assertContains(response, 'Homepage')
+
 	def test_about_response_success(self):
 		response = self.client.get(reverse('main.views.about'))
 		self.assertEqual(response.status_code, 200)
