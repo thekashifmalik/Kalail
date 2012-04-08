@@ -5,4 +5,5 @@ django-debug-toolbar==0.9.4
 django-storages==1.1.4
 gunicorn==0.14.2
 psycopg2==2.4.1
+python-memcached==1.48
 rope==0.9.3

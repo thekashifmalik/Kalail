@@ -180,3 +180,11 @@ AWS_STORAGE_BUCKET_NAME = 'kalail_s3_bucket'
 INTERNAL_IPS = (
     '127.0.0.1',
     )
+
+# Set up Cache
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': 'localhost:11211',
+    }
+}
