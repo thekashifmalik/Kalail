@@ -188,3 +188,6 @@ CACHES = {
         'LOCATION': 'localhost:11211',
     }
 }
+
+# Set up Sessions
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
