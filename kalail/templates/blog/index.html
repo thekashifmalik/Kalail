@@ -9,6 +9,10 @@
 <h2><a href= {% url blog.views.show_post post_id=post.id %} >{{post.title}}</a></h2>
 <p>{{post.body|safe|truncatewords_html:25}}</p>
 </li>
+{% empty %}
+<li>
+<p>There are no posts yet!</p>
+</li>
 {% endfor %}
 </ul>
 {% endblock content %}
