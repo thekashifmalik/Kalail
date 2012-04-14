@@ -1,7 +1,7 @@
 # Django settings for kalail project.
 import socket
 
-if socket.gethostname() == 'Kalail-PC':
+if socket.gethostname() == 'Kalail-PC' or socket.gethostname() == 'Kashifs-MacBook-Pro.local':
     DEBUG = TEMPLATE_DEBUG = True
     STATIC_URL = '/static/'
 else:
