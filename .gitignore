@@ -67,3 +67,7 @@ pip-log.txt
 
 venv
 *.pyc
+
+Mac
+.DS_Store
+.python

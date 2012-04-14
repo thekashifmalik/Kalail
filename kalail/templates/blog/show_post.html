@@ -9,7 +9,7 @@
 {% block content %}
 <h1>{{post.title}}</h1>
 <h5>{{post.created_on}}</h5>
-<p>{{post.body|urlize|linebreaks}}</p>
+<p>{{post.body|safe}}</p>
 
 <h3>Comments</h3>
 <ul>

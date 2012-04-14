@@ -19,10 +19,9 @@ h1,h2,h3,h4,h5
 	margin: 0px 0px 0px 0px;
 	padding: 1px 25px 10px 25px;
 	height: 140px;
-	/*border-style: none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset;*/
+	
 
 	border-bottom: 1px solid rgb(255,255,255);
-	/*background-color: rgb(170,90,20);*/
 }
 
 .header_item
@@ -70,7 +69,8 @@ body
 	margin: 0% 0% 0% 0%;
 	height: auto;
 	font-family:"Segoe UI", "Helvetica", sans-serif;
-	background-color: rgb(13,13,13);
+	/*background-color: rgb(13,13,13);*/
+	background-color: rgb(25,25,25);
 }
 
 html
@@ -106,9 +106,10 @@ label
 	color: white;
 }
 
-.kalail_title
+#kalail_title
 {
 	color: white;
-	text-decoration:  none;
-	text-shadow: white 0px 0px 35px;
+	text-decoration: none;
+	text-shadow: white 0px 0px 45px;
 }
+

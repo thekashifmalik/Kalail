@@ -10,6 +10,10 @@
 <p><em>{{version.created_on}}</em></p>
 <p>{{version.features|linebreaks}}</p>
 </li>
+{% empty %}
+<li>
+<p>There are no versions yet!</p>
+</li>
 {% endfor %}
 </ul>
 {% endblock content %}
