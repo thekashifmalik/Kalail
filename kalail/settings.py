@@ -191,3 +191,13 @@ CACHES = {
 
 # Set up Sessions
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
+
+# Email Setup
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kashif610@gmail.com'
+EMAIL_HOST_PASSWORD = 'b2tmanb2tman'
+#EMAIL_HOST_USER = 'kalail@kalail.com'
+#EMAIL_HOST_PASSWORD = 'batmanbatman'
+EMAIL_PORT = 587
