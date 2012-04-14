@@ -146,6 +146,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'storages',
     'debug_toolbar',
+    'social_auth',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -196,8 +197,26 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 # Email Setup
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'kashif610@gmail.com'
-EMAIL_HOST_PASSWORD = 'b2tmanb2tman'
-#EMAIL_HOST_USER = 'kalail@kalail.com'
-#EMAIL_HOST_PASSWORD = 'batmanbatman'
+EMAIL_HOST_USER = 'kalail@kalail.com'
+EMAIL_HOST_PASSWORD = 'batmanbatman'
 EMAIL_PORT = 587
+
+# Google Authentication
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.google.GoogleBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = '/sign_in_needed/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL = '/login-error/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+)

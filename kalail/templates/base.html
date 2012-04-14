@@ -38,6 +38,15 @@
                 </li>
             </ul>
         </div>
+        
+
+        <div id="User_email">
+            {% if user.is_authenticated %}
+                <p>Welcome {{user.email}}!</p>
+            {% else %}
+                <p>Welcome You! Consider <a href="{% url main.views.sign_in %}">Signing in!</a></p>
+            {% endif %}
+        </div>
 
         <div class="content">
             {% block content %}{% endblock %}
