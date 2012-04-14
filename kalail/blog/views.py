@@ -6,7 +6,6 @@ from django.template import RequestContext
 from blog.models import Post, Comment
 from django.views.decorators.cache import cache_page
 
-@cache_page(60 * 30)
 def index(request):
 	all_posts = Post.objects.all().order_by('-created_on')
 	return render_to_response('blog/index.html', {'all_posts': all_posts}, context_instance=RequestContext(request))
