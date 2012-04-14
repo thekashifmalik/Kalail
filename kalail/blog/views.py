@@ -31,10 +31,4 @@ def add_comment(request, post_id):
 			new_comment = Comment(post=new_comment_post, text=new_comment_text, author=new_comment_author)
 		
 			new_comment.save()
-	else:
-		if request.session['just_failed_captcha'] == False:
-			return HttpResponseRedirect(reverse('blog.views.index'))
-
-		request.session['just_failed_captcha'] = False
-
 	return HttpResponseRedirect(reverse('blog.views.show_post', args=(post_id)))
