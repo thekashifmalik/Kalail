@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'storages',
     'debug_toolbar',
     'social_auth',
+    'feedbax',
 )
 
 # A sample logging configuration. The only tangible logging
