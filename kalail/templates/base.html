@@ -22,7 +22,7 @@
 <body>
     <div class="body-centered">
         <div class="header">
-            <h1><a id='kalail_title' href={% url main.views.index %}>KALAIL</a></h1>
+            <h1><a id='kalail_title' href= {% url main.views.index %} >KALAIL</a></h1>
             <ul>
                 <li class="header_item">
                     <strong><a class="header_item_link" href= {% url blog.views.index %} >Blog</a></strong>
@@ -35,6 +35,9 @@
                 </li>
                 <li class="header_item">
                     <strong><a class="header_item_link" href= {% url versioning.views.index %} >Versions</a></strong>
+                </li>
+                <li class="header_item">
+                    <strong><a class="header_item_link" href= {% url feedbax.views.index %} >Feedbax</a></strong>
                 </li>
             </ul>
         </div>

@@ -100,6 +100,16 @@ label
 	margin-left: 250px;
 }
 
+#new_feedbax_submit
+{
+	margin-left: 288px;
+}
+
+#new_feedback_submit
+{
+	margin-left: 296px;
+}
+
 .captcha
 {
 	background-color: rgb(175,20,20);
