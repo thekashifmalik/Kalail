@@ -15,6 +15,11 @@
 <p><em>{{feedback.content}}</em></p>
 <p>-{{feedback.user.email}}</p>
 </li>
+{% empty %}
+<li>
+<p><em>There is no feedback yet.</em></p>
+</li>
+
 {% endfor %}
 
 {% endblock content %}
