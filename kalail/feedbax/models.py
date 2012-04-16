@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class TestSystem(models.Model):
 	name = models.CharField(max_length=64)
-	site = models.URLField(max_length=200)
-	feedbax_site = models.CharField(max_length=200)
-	report_email = models.EmailField(max_length=32)
+	site = models.URLField(max_length=128)
+	feedbax_site = models.CharField(max_length=128)
+	report_email = models.EmailField(max_length=128)
 	users = models.ManyToManyField(User)
 	created_on = models.DateTimeField(auto_now_add=True)
 
