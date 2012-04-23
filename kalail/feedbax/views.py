@@ -31,7 +31,7 @@ def setup_feedback_system(request):
 		email_message = "Thank you for setting up your " + new_name + " Feedbax.\n\
 		\n\
 		Send in feedback to " + request.build_absolute_uri(reverse('feedbax.views.send_feedback', args=[new_feedbax_site])) + "\n\
-		Feedback will automatically forwarded to " + new_report_email
+		Feedback will automatically be forwarded to " + new_report_email
 
 		# Send email
 		setup_email = EmailMessage('Setup Complete', email_message, to=[new_report_email, request.user.email])
