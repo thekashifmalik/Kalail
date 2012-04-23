@@ -60,8 +60,12 @@ h1,h2,h3,h4,h5
 {
 	height: auto;
 
-	width: 900px;
+	width: 860px;
+	padding: 20px;
 	margin: 0% auto 0%;
+	background-image: url("img/background_tile.png");
+	background-repeat: repeat;
+	box-shadow: 0px 0px 15px 10px;
 }
 
 body
@@ -69,10 +73,9 @@ body
 	margin: 0% 0% 0% 0%;
 	height: auto;
 	font-family:"Segoe UI", "Helvetica", sans-serif;
-	/*background-color: rgb(13,13,13);*/
+	background-color: rgb(7,7,7);
 	/*background-color: rgb(25,25,25);*/
-	background-image: url("img/background_tile.png");
-	background-repeat: repeat;
+	
 }
 
 html
@@ -80,14 +83,22 @@ html
 	height: auto;
 }
 
+#signout_button
+{
+	right: 0%;
+}
+
+#user_authentication_div
+{
+
+}
 
 
-
-@font-face
+/*@font-face
 {
 	font-family: "Segoe UI";
  	src: url("fonts/segoeui.ttf");
-}
+}*/
 
 label
 {
