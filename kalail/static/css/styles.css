@@ -70,7 +70,9 @@ body
 	height: auto;
 	font-family:"Segoe UI", "Helvetica", sans-serif;
 	/*background-color: rgb(13,13,13);*/
-	background-color: rgb(25,25,25);
+	/*background-color: rgb(25,25,25);*/
+	background-image: url("img/background_tile.png");
+	background-repeat: repeat;
 }
 
 html
