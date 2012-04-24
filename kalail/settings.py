@@ -148,6 +148,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'social_auth',
     'feedbax',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -179,9 +180,14 @@ AWS_ACCESS_KEY_ID = 'AKIAI7EOYMFRURZPCUKA'
 AWS_SECRET_ACCESS_KEY = 'NbcKQ2igHvhBc2fIPIf2FZ3lsTtyIRhnmROZ2eji'
 AWS_STORAGE_BUCKET_NAME = 'kalail_s3_bucket'
 
+# Django debug toolbar
 INTERNAL_IPS = (
     '127.0.0.1',
     )
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}
 
 # Set up Cache
 CACHES = {
