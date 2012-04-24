@@ -208,6 +208,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
+GOOGLE_DISPLAY_NAME = 'Kalail.com'
+
 LOGIN_URL = '/sign_in_needed/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL = '/login-error/'
