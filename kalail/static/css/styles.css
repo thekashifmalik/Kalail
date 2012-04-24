@@ -65,14 +65,16 @@ h1,h2,h3,h4,h5
 	margin: 0% auto 0%;
 	background-image: url("img/background_tile.png");
 	background-repeat: repeat;
-	box-shadow: 0px 0px 15px 10px;
+	box-shadow: 0px 0px 15px 10px black;
+	/*Chrome Shadows*/
+	-webkit-box-shadow: 0px 0px 15px 10px black;
 }
 
 body
 {
 	margin: 0% 0% 0% 0%;
 	height: auto;
-	font-family:"Segoe UI", "Helvetica", sans-serif;
+	font-family:"Helvetica", "Arial", sans-serif;
 	background-color: rgb(14,14,14);
 	/*background-color: rgb(25,25,25);*/
 	
