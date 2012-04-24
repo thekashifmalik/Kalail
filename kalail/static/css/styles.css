@@ -1,46 +1,103 @@
-p
+html
 {
-	color: rgb(220,220,220);
+	height: 100%;
 }
 
-a
+body
 {
-	color: rgb(160,40,40);
+	margin: 0% 0% 0% 0%;
+	height: auto;
+	font-family:"Helvetica", "Arial", sans-serif;
+	background-color: rgb(14,14,14);
 }
 
-
-h1,h2,h3,h4,h5
+#body_centered
 {
-	color: rgb(255,255,255);
+	height: auto;
+	width: 900px;
+	margin: 0% auto 0%;
+	background-image: url("img/background_tile.png");
+	background-repeat: repeat;
+	box-shadow: 0px 0px 15px 10px black;
+	/*Chrome Shadows*/
+	-webkit-box-shadow: 0px 0px 15px 10px black;
 }
 
-.header
+#body_centered_spaced
 {
-	margin: 0px 0px 0px 0px;
-	padding: 1px 25px 10px 25px;
+	height: auto;
+	width: 860px;
+	margin: 0% auto 0%;
+}
+
+#header
+{
+	/*padding: 2px 25px 10px 25px;*/
 	height: 140px;
-	
+	border-bottom: 1px solid white;
+}
 
-	border-bottom: 1px solid rgb(255,255,255);
+#header_spaced
+{
+	height: auto;
+	width: 810px;
+	margin: 0px auto;
+}
+
+#header_title
+{
+	height: 70px;
+	width: 20%;
+	float: left;
+	text-align: left;
+}
+
+#header_title_text
+{
+	color: white;
+	text-decoration: none;
+	text-shadow: white 0px 0px 45px;
+}
+
+#header_title_text:hover
+{
+	color: white;
+	text-decoration: none;
+	text-shadow: white 0px 0px 30px;
+}
+
+#header_user_menu
+{
+	height: 70px;
+	width: 80%;
+	float: right;
+	text-align: right;
+}
+
+#header_nav_block
+{
+	height: 70px;
+	width: 100%;
+	float: left;
+}
+
+#header_nav_menu
+{
+	margin-top: 20px;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 .header_item
 {
 	display: inline;
-	padding-right: 15px;
-	/*padding-left: 15px;*/
+	padding-right: 5px;
 }
 
 .header_item_link
 {
-	border-radius: 15px;
-	border-color: rgb(255,255,255);
-	border-style: solid;
-	border-width: 2px;
 	padding:6px;
-
 	color: rgb(255,255,255);
-	/*text-shadow: rgb(100,100,100) 0px 0px 15px;*/
 	text-decoration:  none;
 }
 
@@ -50,44 +107,15 @@ h1,h2,h3,h4,h5
 	color: rgb(0,0,0);
 }
 
-.content
+#content
 {
-	margin: 0px 25px 0px 25px;
+	width:	810px;
+	margin: 0px auto;
 	padding-bottom: 25px;
-}
-
-.body-centered
-{
-	height: auto;
-
-	width: 860px;
-	padding: 20px;
-	margin: 0% auto 0%;
-	background-image: url("img/background_tile.png");
-	background-repeat: repeat;
-	box-shadow: 0px 0px 15px 10px black;
-	/*Chrome Shadows*/
-	-webkit-box-shadow: 0px 0px 15px 10px black;
-}
-
-body
-{
-	margin: 0% 0% 0% 0%;
-	height: auto;
-	font-family:"Helvetica", "Arial", sans-serif;
-	background-color: rgb(14,14,14);
-	/*background-color: rgb(25,25,25);*/
-	
-}
-
-html
-{
-	height: auto;
 }
 
 #signout_button
 {
-	right: 0%;
 }
 
 #user_authentication_div
@@ -131,10 +159,18 @@ label
 	color: white;
 }
 
-#kalail_title
+p
 {
-	color: white;
-	text-decoration: none;
-	text-shadow: white 0px 0px 45px;
+	color: rgb(220,220,220);
 }
 
+a
+{
+	color: rgb(160,40,40);
+}
+
+
+h1,h2,h3,h4,h5
+{
+	color: rgb(255,255,255);
+}
