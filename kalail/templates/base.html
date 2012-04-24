@@ -45,7 +45,7 @@
         <div id="user_authentication_div">
             {% if user.is_authenticated %}
                 <p>Welcome {{user.email}}!</p>
-                <a href= "" id="signout_button">Signout</a>
+                <a href= {% url main.views.sign_out %} id="signout_button">Signout</a>
             {% else %}
                 <p>Welcome You! Consider <a href="{% url main.views.sign_in %}">Signing in!</a></p>
             {% endif %}
