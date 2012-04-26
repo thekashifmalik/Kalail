@@ -130,15 +130,17 @@ body
 	padding-bottom: 25px;
 }
 
+#user_authentication_div
+{
+}
+
+#signin_button
+{	
+}
+
 #signout_button
 {
 }
-
-#user_authentication_div
-{
-
-}
-
 
 /*@font-face
 {
