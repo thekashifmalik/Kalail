@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Blog - {{post.title}}{% endblock title %}
-{% block head %}
-{% endblock head %}
+{% block js %}
+<script src="{{STATIC_URL}}js/add_comment_validation.js"></script>
+{% endblock js %}
 
 
 {% block content %}
@@ -23,26 +24,27 @@
 {% endfor %}
 </ul>
 
-<h4>Add Comment</h4>
-
  {# Add error here. #}
 
 <form action= {% url blog.views.add_comment post_id=post.id %} method="post">
 	{% csrf_token %}
-	<p>
-		<label for='new_comment_text' >Comment:</label>
-		<input name='new_comment_text' type='text' id='new_comment_text' />
-	</p>
-	<p>
-		<label for='new_comment_author' >Author:</label>
-		<input name='new_comment_author' type='text' id='new_comment_author' {% if user.is_authenticated %} value={{user.username}} {% else %} value='Anonymous' {% endif %} />
-	</p>
-	<p>
-		<label for='new_comment_captcha' >What color is this box?:</label>
-		<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder='red'/>
-	</p>
-
-	<input class='submit' type='submit' value='Comment' />
+	<fieldset>
+		<legend>Add Comment</legend>
+			<p>
+				<label for='new_comment_text' >Comment:</label>
+				<textarea name='new_comment_text' rows="3" cols="50" id='new_comment_text' ></textarea>
+			</p>
+			<p>
+				<label for='new_comment_author' >Author:</label>
+				<input name='new_comment_author' type='text' id='new_comment_author' {% if user.is_authenticated %} value={{user.username}} {% else %} value='Anonymous' {% endif %} />
+			</p>
+			<p>
+				<label for='new_comment_captcha' >What color is this box?:</label>
+				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder='red'/>
+			</p>
+		
+			<input class='submit' type='submit' value='Comment' />
+	</fieldset>
 </form>
 
 {% endblock content %}

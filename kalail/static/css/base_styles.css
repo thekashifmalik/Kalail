@@ -9,6 +9,7 @@ body
 	height: auto;
 	font-family:"Helvetica", "Arial", sans-serif;
 	background-color: rgb(14,14,14);
+	color: rgb(220,220,220);
 }
 
 #body_centered
@@ -32,7 +33,6 @@ body
 
 #header
 {
-	/*padding: 2px 25px 10px 25px;*/
 	height: 140px;
 	border-bottom: 1px solid white;
 }
@@ -169,6 +169,22 @@ label
 	margin-left: 296px;
 }
 
+textarea, input
+{
+	font-family:"Helvetica", "Arial", sans-serif;
+	border-radius: 4px;
+	border: 2px solid white;
+}
+
+textarea:hover, input:hover
+{
+}
+
+textarea:focus, input:focus
+{
+	box-shadow: 0px 0px 10px white;
+}
+
 .captcha
 {
 	background-color: rgb(175,20,20);
@@ -177,11 +193,11 @@ label
 
 p
 {
-	color: rgb(220,220,220);
 }
 
 a
 {
+	text-decoration: none;
 	color: rgb(160,40,40);
 }
 
@@ -189,4 +205,9 @@ a
 h1,h2,h3,h4,h5
 {
 	color: rgb(255,255,255);
+}
+
+fieldset
+{
+	border: 1px solid white;
 }
