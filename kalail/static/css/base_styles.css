@@ -168,12 +168,6 @@ textarea:focus, input:focus
 	box-shadow: 0px 0px 10px white;
 }
 
-.captcha
-{
-	background-color: rgb(175,20,20);
-	color: white;
-}
-
 p
 {
 }

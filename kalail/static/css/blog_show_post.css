@@ -10,3 +10,10 @@
 {
 	margin-left: 250px;
 }
+
+.captcha
+{
+	background-color: rgb(175,20,20);
+	color: white;
+	border: 2px solid rgb(175,20,20);
+}
