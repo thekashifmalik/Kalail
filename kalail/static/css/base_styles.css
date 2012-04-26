@@ -142,25 +142,6 @@ body
 {
 }
 
-/*@font-face
-{
-	font-family: "Segoe UI";
- 	src: url("fonts/segoeui.ttf");
-}*/
-
-label
-{
-	width: 175px;
-	float: left;
-	text-align: right;
-	margin-right: 10px;
-}
-
-.submit
-{
-	margin-left: 250px;
-}
-
 #new_feedbax_submit
 {
 	margin-left: 288px;

@@ -1,0 +1,12 @@
+.add_comment_label
+{
+	width: 175px;
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.add_comment_submit
+{
+	margin-left: 250px;
+}

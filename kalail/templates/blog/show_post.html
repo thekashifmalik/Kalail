@@ -4,6 +4,9 @@
 <script src="{{STATIC_URL}}js/add_comment_validation.js"></script>
 {% endblock js %}
 
+{% block css %}
+<link href="{{STATIC_URL}}css/blog_show_post.css" rel="stylesheet">
+{% endblock css %}
 
 {% block content %}
 <h1>{{post.title}}</h1>
@@ -31,19 +34,19 @@
 	<fieldset>
 		<legend>Add Comment</legend>
 			<p>
-				<label for='new_comment_text' >Comment:</label>
+				<label for='new_comment_text' class="add_comment_label" >Comment:</label>
 				<textarea name='new_comment_text' rows="3" cols="50" id='new_comment_text' ></textarea>
 			</p>
 			<p>
-				<label for='new_comment_author' >Author:</label>
+				<label for='new_comment_author' class="add_comment_label" >Author:</label>
 				<input name='new_comment_author' type='text' id='new_comment_author' {% if user.is_authenticated %} value={{user.username}} {% else %} value='Anonymous' {% endif %} />
 			</p>
 			<p>
-				<label for='new_comment_captcha' >What color is this box?:</label>
+				<label for='new_comment_captcha' class="add_comment_label" >What color is this box?:</label>
 				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder='red'/>
 			</p>
 		
-			<input class='submit' type='submit' value='Comment' />
+			<input class='add_comment_submit' type='submit' value='Comment' />
 	</fieldset>
 </form>
 
