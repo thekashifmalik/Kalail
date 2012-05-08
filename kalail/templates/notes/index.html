@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}Notes{% endblock title %}
+{% block css %}
+<link href="{{STATIC_URL}}css/notes_styles.css" rel="stylesheet">
+{% endblock css %}
 {% block content %}
 <h1>Notes</h1>
 <p>Just put some text here, hit save, and you can view and edit it from anywhere!</p>
+
+<form action= {% url notes.views.index %} method="POST">
+	{% csrf_token %}
+	<textarea name='notepad_text' rows="20" cols="100" id='notepad_text'>{{notepad.body}}</textarea>
+	<input class='notepad_submit' type='submit' value='Save'/>
+</form>
 
 {% endblock content %}

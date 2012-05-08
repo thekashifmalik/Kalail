@@ -7,13 +7,19 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from notes.models import Notepad
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 
 @login_required
 def index(request):
+	try:
+		notepad = request.user.notepad
+
+	except ObjectDoesNotExist:
+		notepad = Notepad(body = "", user = request.user)
+		notepad.save()
+
 	if request.method == 'POST':
-		pass
-	if request.user.notepad_set.all.count() == 0:
-		new_notepad = Notepad(body = "", author = request.user)
-		new_notepad.save()
-	return render_to_response('notes/index.html', {"notepad" : }, context_instance=RequestContext(request))
-	return render_to_response('blog/show_post.html', {'post': post, 'comments': comments}, context_instance=RequestContext(request))
+		notepad.body = request.POST['notepad_text']
+		notepad.save()
+	
+	return render_to_response('notes/index.html', {"notepad" : notepad }, context_instance=RequestContext(request))
