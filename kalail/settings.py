@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'social_auth',
     'feedbax',
     'django_extensions',
+    'notes',
 )
 
 # A sample logging configuration. The only tangible logging
