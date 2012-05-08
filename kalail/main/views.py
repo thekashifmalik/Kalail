@@ -7,8 +7,8 @@ from django.contrib.auth import logout
 
 
 def index(request):
-	return render_to_response('main/index.html', context_instance=RequestContext(request))
-	#return HttpResponseRedirect(reverse('blog.views.index'))
+	#return render_to_response('main/index.html', context_instance=RequestContext(request))
+	return HttpResponseRedirect(reverse('blog.views.index'))
 
 def	sign_in_needed(request):
 	request.session['next'] = request.REQUEST.get('next', '')
