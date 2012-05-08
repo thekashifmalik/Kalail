@@ -27,8 +27,9 @@ class notes_testcase(TestCase):
 
 	def test_signed_in_index_shows_notepad_success(self):
 		self.client.login(username='test_user_name', password='test_user_password')
+		self.client.get(reverse('notes.views.index'))
 		user = User.objects.get(id = self.client.session['_auth_user_id'])
-		user.notepad = Notepad(body = "Test Test Test")
+		user.notepad.body = "Test Test Test"
 		user.notepad.save()
 		response = self.client.get(reverse('notes.views.index'))
 		self.assertContains(response, user.notepad.body)
