@@ -147,7 +147,6 @@ INSTALLED_APPS = (
     'storages',
     'debug_toolbar',
     'social_auth',
-    'feedbax',
     'django_extensions',
     'notes',
 )
