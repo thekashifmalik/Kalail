@@ -14,7 +14,7 @@ import django
 # calculated paths for django and the site
 # used as starting points for various other paths
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__) + "/../../")
 
 def relative_path(relative_root_path, target_file):
     return os.path.join(relative_root_path, target_file)
@@ -139,7 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'main',
+    'kalail.main',
     'blog',
     'versioning',
     'south',

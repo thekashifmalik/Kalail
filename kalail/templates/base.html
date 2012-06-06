@@ -25,16 +25,16 @@
             <div id="header">
                 <div id="header_spaced">
                     <div id="header_title" >
-                        <h1><a id="header_title_text" href= {% url main.views.index %} >KALAIL</a></h1>
+                        <h1><a id="header_title_text" href= {% url kalail.main.views.index %} >KALAIL</a></h1>
                     </div>
         
                     <div id="header_user_menu">
                         {% if user.is_authenticated %}
                             <p>Welcome {{user.email}}!</p>
-                            <a href= {% url main.views.sign_out %} id="signout_button">Sign out</a>
+                            <a href= {% url kalail.main.views.sign_out %} id="signout_button">Sign out</a>
                         {% else %}
                             <p>Welcome Guest!</p>
-                            <a href="{% url main.views.sign_in %}" id="signin_button">Sign in</a>
+                            <a href="{% url kalail.main.views.sign_in %}" id="signin_button">Sign in</a>
                         {% endif %}
                     </div>
         
@@ -44,10 +44,10 @@
                                 <a class="header_item_link" href= {% url blog.views.index %} >Blog</a>
                             </li>
                             <li class="header_item">
-                                <a class="header_item_link" href= {% url main.views.about %} >About</a>
+                                <a class="header_item_link" href= {% url kalail.main.views.about %} >About</a>
                             </li>
                             <li class="header_item">
-                                <a class="header_item_link" href= {% url main.views.contact %} >Contact</a>
+                                <a class="header_item_link" href= {% url kalail.main.views.contact %} >Contact</a>
                             </li>
                             <li class="header_item">
                                 <a class="header_item_link" href= {% url versioning.views.index %} >Versions</a>                        

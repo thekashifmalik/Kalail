@@ -1,6 +1,6 @@
 from blog.models import Post, Comment
 from django.contrib import admin
-from settings import STATIC_URL
+from kalail.settings import STATIC_URL
 
 class PostAdmin(admin.ModelAdmin):
 	fields = ['title', 'body']

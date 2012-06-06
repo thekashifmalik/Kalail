@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from kalail.blog.feeds import LatestPostsFeed
+from blog.feeds import LatestPostsFeed
 
 urlpatterns = patterns('blog.views',
 	url(r'^$', 'index'),
