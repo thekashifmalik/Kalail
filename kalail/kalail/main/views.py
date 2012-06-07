@@ -26,5 +26,5 @@ def contact(request):
 
 def sign_out(request):
     logout(request)
-    return HttpResponseRedirect(reverse('main.views.index'))
+    return HttpResponseRedirect(reverse('kalail.main.views.index'))
 
