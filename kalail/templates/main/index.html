@@ -1,6 +1,45 @@
 {% extends 'base.html' %}
-{% block title %}Homepage{% endblock title %}
+{% block title %}Home{% endblock title %}
+
+{% block css %}
+<link href="{{STATIC_URL}}css/main_index.css" rel="stylesheet">
+{% endblock css %}
+
 {% block content %}
-<h1>This is the Homepage!</h1>
-<p>There is nothing here yet. Check out the <a href={% url blog.views.index %}>blog.</a></p>
+<div id='home_text'>
+	<h1>Home</h1>
+	<p>Welcome to Kalail.</p>
+</div>
+
+<div id='recent_tweets'>
+	<h2>Recent Tweets</h2>
+	<ul>
+		{% for tweet in recent_tweets %}
+			<li>
+				<p>{{tweet.text}}</p>
+			</li>
+			{% empty %}
+			<li>
+				<p>There are no tweets yet!</p>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<div id='recent_blogposts'>
+	<h2>Recent Blog Posts</h2>
+	<ul>
+		{% for post in recent_blogposts %}
+			<li>
+				<h2><a href= {% url blog.views.show_post post_id=post.id %} >{{post.title}}</a></h2>
+				<p>{{post.body|safe|truncatewords_html:25}}</p>
+			</li>
+			{% empty %}
+			<li>
+				<p>There are no posts yet!</p>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+
 {% endblock content %}

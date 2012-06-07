@@ -270,3 +270,8 @@ try:
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 except Exception:
     print 'Unexpected error:', sys.exc_info()
+
+
+# Twitter settings
+TWITTER_USERNAME = "kashif610"
+TWITTER_CACHE_TIMEOUT = 60 * 5

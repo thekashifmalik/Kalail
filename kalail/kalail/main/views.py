@@ -4,11 +4,17 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.contrib.auth import logout
+from blog.models import Post
+from kalail.settings import TWITTER_USERNAME
+from django.core.cache import cache
+import twitter
 
 
 def index(request):
-	#return render_to_response('main/index.html', context_instance=RequestContext(request))
-	return HttpResponseRedirect(reverse('blog.views.index'))
+	recent_blogposts = Post.objects.all().order_by('-created_on')[:3]
+	recent_tweets = twitter.Api().GetUserTimeline(TWITTER_USERNAME)[:5]
+	return render_to_response('main/index.html', {'recent_blogposts': recent_blogposts, 'recent_tweets': recent_tweets},context_instance=RequestContext(request))
+	#return HttpResponseRedirect(reverse('blog.views.index'))
 
 def	sign_in_needed(request):
 	request.session['next'] = request.REQUEST.get('next', '')

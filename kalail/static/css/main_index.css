@@ -1,0 +1,24 @@
+#recent_blogposts
+{
+	left: 0%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#recent_tweets
+{
+	/*left: 80%;*/
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-size: 75%;
+	margin-bottom: 50px;
+
+}
+
+#home_text
+{
+	width: 100%;
+	margin-bottom: 50px;
+}

@@ -14,4 +14,6 @@ oauth2==1.5.211
 psycopg2==2.4.1
 python-memcached==1.48
 python-openid==2.2.5
+python-twitter==0.8.2
 rope==0.9.3
+simplejson==2.5.2
