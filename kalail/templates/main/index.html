@@ -11,21 +11,6 @@
 	<p>Welcome to Kalail.</p>
 </div>
 
-<div id='recent_tweets'>
-	<h2>Recent Tweets</h2>
-	<ul>
-		{% for tweet in recent_tweets %}
-			<li>
-				<p>{{tweet.text}}</p>
-			</li>
-			{% empty %}
-			<li>
-				<p>There are no tweets yet!</p>
-			</li>
-		{% endfor %}
-	</ul>
-</div>
-
 <div id='recent_blogposts'>
 	<h2>Recent Blog Posts</h2>
 	<ul>
@@ -37,6 +22,21 @@
 			{% empty %}
 			<li>
 				<p>There are no posts yet!</p>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<div id='recent_tweets'>
+	<h2>Recent Tweets</h2>
+	<ul>
+		{% for tweet in recent_tweets %}
+			<li>
+				<p>{{tweet.text}}</p>
+			</li>
+			{% empty %}
+			<li>
+				<p>There are no tweets yet!</p>
 			</li>
 		{% endfor %}
 	</ul>

@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'social_auth',
     'django_extensions',
     'notes',
+    'djcelery',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -275,3 +276,24 @@ except Exception:
 # Twitter settings
 TWITTER_USERNAME = "kashif610"
 TWITTER_CACHE_TIMEOUT = 60 * 5
+
+# Celery settings
+import djcelery
+djcelery.setup_loader()
+
+# Redis
+import os
+import urlparse
+
+CELERY_RESULT_BACKEND = "redis"
+if socket.gethostname() == 'Kalail-PC':
+    BROKER_URL = "redis://localhost:6379/0"
+    CELERY_REDIS_HOST = "localhost"
+    CELERY_REDIS_PORT = 6379
+    CELERY_REDIS_DB = 0
+else:
+    redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL', 'redis://localhost'))
+    BROKER_URL = redis_url.url
+    CELERY_REDIS_HOST = redis_url.hostname
+    CELERY_REDIS_PORT = redis_url.port
+    CELERY_REDIS_DB = 0

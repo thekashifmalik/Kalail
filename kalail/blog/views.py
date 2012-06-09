@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from blog.models import Post, Comment
 from django.views.decorators.cache import cache_page
+from blog.tasks import send_comment_email
 
 def index(request):
 	all_posts = Post.objects.all().order_by('-created_on')
@@ -30,4 +31,5 @@ def add_comment(request, post_id):
 			new_comment = Comment(post=new_comment_post, text=new_comment_text, author=new_comment_author)
 		
 			new_comment.save()
+			send_comment_email.delay()
 	return HttpResponseRedirect(reverse('blog.views.show_post', args=(post_id)))
