@@ -1,7 +1,7 @@
 # Django settings for kalail project.
 import socket
 
-if socket.gethostname() == 'Kalail-PC' or socket.gethostname() == 'Kalail-Mac':
+if socket.gethostname() == 'Kalail-PC':
     DEBUG = TEMPLATE_DEBUG = True
     STATIC_URL = '/static/'
 else:
@@ -231,6 +231,32 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
 )
 
+# Twitter settings
+TWITTER_USERNAME = "kashif610"
+TWITTER_CACHE_TIMEOUT = 60 * 5
+
+# Celery settings
+import djcelery
+djcelery.setup_loader()
+
+# Redis
+import os
+import urlparse
+
+CELERY_RESULT_BACKEND = "redis"
+if socket.gethostname() == 'Kalail-PC':
+    BROKER_URL = "redis://localhost:6379/0"
+    CELERY_REDIS_HOST = "localhost"
+    CELERY_REDIS_PORT = 6379
+    CELERY_REDIS_DB = 0
+else:
+    redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL', 'redis://localhost'))
+    BROKER_URL = redis_url.netloc
+    CELERY_REDIS_HOST = redis_url.hostname
+    CELERY_REDIS_PORT = redis_url.port
+    CELERY_REDIS_DB = 0
+
+
 # Heroku Database settings
 
 import sys
@@ -271,29 +297,3 @@ try:
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 except Exception:
     print 'Unexpected error:', sys.exc_info()
-
-
-# Twitter settings
-TWITTER_USERNAME = "kashif610"
-TWITTER_CACHE_TIMEOUT = 60 * 5
-
-# Celery settings
-import djcelery
-djcelery.setup_loader()
-
-# Redis
-import os
-import urlparse
-
-CELERY_RESULT_BACKEND = "redis"
-if socket.gethostname() == 'Kalail-PC':
-    BROKER_URL = "redis://localhost:6379/0"
-    CELERY_REDIS_HOST = "localhost"
-    CELERY_REDIS_PORT = 6379
-    CELERY_REDIS_DB = 0
-else:
-    redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL', 'redis://localhost'))
-    BROKER_URL = redis_url.netloc
-    CELERY_REDIS_HOST = redis_url.hostname
-    CELERY_REDIS_PORT = redis_url.port
-    CELERY_REDIS_DB = 0
