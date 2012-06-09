@@ -1,2 +1,2 @@
 web: python manage.py run_gunicorn --bind=0.0.0.0:$PORT
-celeryd: python kalail/manage.py celeryd -E -B --loglevel=INFO
+celeryd: python manage.py celeryd --loglevel=INFO
