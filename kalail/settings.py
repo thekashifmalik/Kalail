@@ -251,7 +251,7 @@ if socket.gethostname() == 'Kalail-PC':
     CELERY_REDIS_DB = 0
 else:
     redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL', 'redis://localhost'))
-    BROKER_URL = redis_url.netloc
+    BROKER_URL = os.environ.get('REDISTOGO_URL')
     CELERY_REDIS_HOST = redis_url.hostname
     CELERY_REDIS_PORT = redis_url.port
     CELERY_REDIS_DB = 0
