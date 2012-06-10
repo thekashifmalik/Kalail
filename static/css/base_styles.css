@@ -109,6 +109,7 @@ body
 
 #footer
 {
+	clear: both;
 	width: 900px;
 	margin: 0px auto;
 	height:	40px;

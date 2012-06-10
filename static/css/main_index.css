@@ -1,18 +1,16 @@
 #recent_blogposts
 {
-	display: block;
-	left: 0%;
-	width: 50%;
+	float: left;
+	width: 60%;
 	margin: 0px;
 	padding: 0px;
 }
 
 #recent_tweets
 {
-	display: block;
-	float: right;
-	width: 30%;
 	margin: 0px;
+	margin-left: 70%;
+	width: 30%;
 	padding: 0px;
 	font-size: 75%;
 
@@ -21,5 +19,4 @@
 #home_text
 {
 	width: 100%;
-	margin-bottom: 50px;
 }
