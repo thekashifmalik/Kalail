@@ -1,8 +1,9 @@
 #recent_blogposts
 {
 	float: left;
-	width: 60%;
+	width: 65%;
 	margin: 0px;
+	margin-bottom: 30px;
 	padding: 0px;
 }
 
@@ -13,7 +14,6 @@
 	width: 30%;
 	padding: 0px;
 	font-size: 75%;
-
 }
 
 #home_text
