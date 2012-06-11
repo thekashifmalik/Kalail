@@ -13,7 +13,7 @@
     {% block css %}{% endblock css %}
 
     <script src="{{STATIC_URL}}js/jquery-1.7.2.js"></script>
-    {% dajaxice_js_import %}
+    {% dajaxice_js_import "js/dajaxice.core.js" %}
     {% if not debug %}
     <script src="{{STATIC_URL}}js/google_analytics.js"></script>
     {% endif %}

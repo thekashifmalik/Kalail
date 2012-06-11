@@ -17,7 +17,7 @@
 <ul id="comments">
 {% for comment in comments %}
 <li>
-<p><em>{{comment.text}</em></p>
+<p><em>{{comment.text}}</em></p>
 <p><strong>-{{comment.author}}</strong> - <em>({{comment.created_on|date:"SHORT_DATETIME_FORMAT"}})</em></p>
 </li>
 {% empty %}
