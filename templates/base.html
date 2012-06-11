@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{% load dajaxice_templatetags %}
+
 <head>
     <title>Kalail - {% block title %}{% endblock title %}</title>
 
@@ -10,6 +13,7 @@
     {% block css %}{% endblock css %}
 
     <script src="{{STATIC_URL}}js/jquery-1.7.2.js"></script>
+    {% dajaxice_js_import %}
     {% if not debug %}
     <script src="{{STATIC_URL}}js/google_analytics.js"></script>
     {% endif %}

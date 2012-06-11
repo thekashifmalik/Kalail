@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Blog - {{post.title}}{% endblock title %}
 {% block js %}
-<script src="{{STATIC_URL}}js/add_comment_validation.js"></script>
+<script src="{{STATIC_URL}}js/add_comment.js"></script>
 {% endblock js %}
 
 {% block css %}
@@ -14,10 +14,10 @@
 <p>{{post.body|safe}}</p>
 
 <h3>Comments</h3>
-<ul>
+<ul id="comments">
 {% for comment in comments %}
 <li>
-<p><em>{{comment.text}}</em></p>
+<p><em>{{comment.text|safe}}</em></p>
 <p><strong>-{{comment.author}}</strong> - <em>({{comment.created_on|date:"SHORT_DATETIME_FORMAT"}})</em></p>
 </li>
 {% empty %}
@@ -27,9 +27,9 @@
 {% endfor %}
 </ul>
 
- {# Add error here. #}
+ {# action= {% url blog.views.add_comment post_id=post.id %} method="post" #}
 
-<form action= {% url blog.views.add_comment post_id=post.id %} method="post">
+<form id="new_comment_form">
 	{% csrf_token %}
 	<fieldset>
 		<legend>Add Comment</legend>
@@ -46,7 +46,7 @@
 				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder='red'/>
 			</p>
 		
-			<input class='add_comment_submit' type='submit' value='Comment' />
+			<input class='add_comment_submit' type='button' value='Comment' onclick='Dajaxice.blog.add_comment(add_comment_script, {"post_id":{{post.id}}, "new_comment":decodeURIComponent($("#new_comment_form").serialize()) })' />
 	</fieldset>
 </form>
 

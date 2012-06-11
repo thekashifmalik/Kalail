@@ -107,7 +107,7 @@ SECRET_KEY = 'dhejs&r+c7l!!(7r79zd_je1&e549&w0y72f$+ljj*n107#xew'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'notes',
     'djcelery',
+    'dajaxice',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -255,3 +256,6 @@ else:
     CELERY_REDIS_HOST = redis_url.hostname
     CELERY_REDIS_PORT = redis_url.port
     CELERY_REDIS_DB = 0
+
+# Dajax
+DAJAXICE_MEDIA_PREFIX ="dajaxice"

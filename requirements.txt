@@ -7,6 +7,7 @@ boto==2.3.0
 celery==2.5.5
 django-celery==2.5.5
 django-celery-with-redis==2.5
+django-dajaxice==0.2
 django-debug-toolbar==0.9.4
 django-extensions==0.8
 django-picklefield==0.2.1
