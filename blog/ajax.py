@@ -3,6 +3,7 @@ from dajaxice.decorators import dajaxice_register
 from django.utils import simplejson
 from blog.models import Post, Comment
 from kalail.settings import DEBUG
+from blog.tasks import send_comment_email
 
 @dajaxice_register
 def add_comment(request, post_id, new_comment):
