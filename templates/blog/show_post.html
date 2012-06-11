@@ -46,7 +46,7 @@
 				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder='red'/>
 			</p>
 		
-			<input class='add_comment_submit' type='button' value='Comment' onclick='Dajaxice.blog.add_comment(add_comment_script, {"post_id":{{post.id}}, "new_comment":decodeURIComponent($("#new_comment_form").serialize()) })' />
+			<input class='add_comment_submit' type='button' value='Comment' onclick='Dajaxice.blog.add_comment(add_comment_script, {"post_id":{{post.id}}, "new_comment":decodeURIComponent($("#new_comment_form").serialize().replace(/\+/g,"%20")) })' />
 	</fieldset>
 </form>
 
