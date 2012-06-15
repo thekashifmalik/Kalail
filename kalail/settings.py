@@ -259,7 +259,6 @@ else:
 
 # Dajax
 DAJAXICE_MEDIA_PREFIX ="dajaxice"
-CELERY_RESULT_BACKEND = "redis"
 if socket.gethostname() == 'Kalail-PC':
     DAJAXICE_DEBUG = True
 else:
