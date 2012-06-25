@@ -43,7 +43,7 @@
 			</p>
 			<p>
 				<label for='new_comment_captcha' class="add_comment_label" >What color is this box?:</label>
-				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder='red'/>
+				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder="type 'red' here"/>
 			</p>
 		
 			<input class='add_comment_submit' type='button' value='Comment' onclick='Dajaxice.blog.add_comment(add_comment_script, {"post_id":{{post.id}}, "new_comment":decodeURIComponent($("#new_comment_form").serialize().replace(/\+/g,"%20")) })' />
