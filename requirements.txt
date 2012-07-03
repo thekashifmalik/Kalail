@@ -5,6 +5,7 @@ amqplib==1.0.2
 anyjson==0.3.1
 boto==2.3.0
 celery==2.5.5
+dj-database-url==0.2.1
 django-celery==2.5.5
 django-celery-with-redis==2.5
 django-dajaxice==0.2
