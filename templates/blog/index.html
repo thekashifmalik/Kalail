@@ -6,7 +6,7 @@
 <ul>
 {% for post in all_posts %}
 <li>
-<h2><a href= {% url blog.views.show_post post_id=post.id %} >{{post.title}}</a></h2>
+<h2><a href= {% url blog.views.show_post post_id=post.id post_slug=post.slug %} >{{post.title}}</a></h2>
 <p>{{post.body|safe|truncatewords_html:25}}</p>
 </li>
 {% empty %}

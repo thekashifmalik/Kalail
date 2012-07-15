@@ -17,4 +17,4 @@ class LatestPostsFeed(Feed):
 		return item.body
 
 	def item_link(self, item):
-		return reverse('blog.views.show_post', args=(str(item.id)))
+		return reverse('blog.views.show_post', args=(str(item.id), item.slug))
