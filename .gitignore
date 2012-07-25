@@ -33,9 +33,6 @@ _ReSharper*/
 local_settings.py
 
 .ropeproject
-Include
-Scripts
-Lib
 
 *.py[co]
 
