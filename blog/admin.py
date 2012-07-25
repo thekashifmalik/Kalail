@@ -8,9 +8,9 @@ class PostAdmin(admin.ModelAdmin):
 	search_fields = ['title', 'body']
 
 class CommentAdmin(admin.ModelAdmin):
-	fields = ['post', 'text', 'author']
-	list_display = ('text', 'author', 'created_on', 'post')
-	search_fields = ['text', 'author']
+	fields = ['post', 'text', 'user']
+	list_display = ('text', 'user', 'created_on', 'post')
+	search_fields = ['text', 'user']
 
 class CommonMedia:
 	js = (

@@ -18,7 +18,7 @@
 {% for comment in comments %}
 <li>
 <p><em>{{comment.text}}</em></p>
-<p><strong>-{{comment.author}}</strong> - <em>({{comment.created_on|date:"SHORT_DATETIME_FORMAT"}})</em></p>
+<p><strong>-{% if comment.user %}{{comment.user.first_name}}{% else %}{{ 'Anonymous' }}{% endif %}</strong> - <em>({{comment.created_on|date:"SHORT_DATETIME_FORMAT"}})</em></p>
 </li>
 {% empty %}
 <li>
