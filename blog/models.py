@@ -16,7 +16,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
 	text = models.TextField()
-	user = models.ForeignKey(User, null=True, blank=True, default = None)
+	author = models.CharField(max_length=32)
 	post = models.ForeignKey(Post)
 	created_on = models.DateTimeField(auto_now_add=True)
 
