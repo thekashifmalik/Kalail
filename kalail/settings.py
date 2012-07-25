@@ -6,7 +6,7 @@ if socket.gethostname() == 'Kalail-PC':
     STATIC_URL = '/static/'
 else:
     DEBUG = TEMPLATE_DEBUG = False
-    STATIC_URL = 'https://s3.amazonaws.com/kalail_s3_bucket/'
+    STATIC_URL = 'https://s3.amazonaws.com/kalail_static/'
 
 
 import os
@@ -184,7 +184,7 @@ LOGGING = {
 STATICFILES_STORAGE = DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = 'AKIAI7EOYMFRURZPCUKA'
 AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'kalail_s3_bucket'
+AWS_STORAGE_BUCKET_NAME = 'kalail_static'
 
 # Django debug toolbar
 INTERNAL_IPS = (
