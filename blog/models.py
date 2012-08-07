@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 class Post(models.Model):
 	title = models.CharField(max_length=64)
@@ -8,7 +9,7 @@ class Post(models.Model):
 
 	@property
 	def slug(self):
-  		return slugify(self.title)
+		return slugify(self.title)
 
 
 	def __unicode__(self):
@@ -16,7 +17,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
 	text = models.TextField()
-	author = models.CharField(max_length=32)
+	user = models.ForeignKey(User, null=True, blank=True, default = None)
 	post = models.ForeignKey(Post)
 	created_on = models.DateTimeField(auto_now_add=True)
 
