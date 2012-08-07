@@ -26,6 +26,8 @@ def run():
 				user = user.id
 			except User.DoesNotExist:
 				user = None
+			except User.MultipleObjectsReturned:
+				user = User.objects.filter(first_name=user_name)[0].id
 
 		user_ids.append(user)
 		sys.stdout.write(".")
