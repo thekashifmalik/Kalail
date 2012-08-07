@@ -21,7 +21,11 @@ def run():
 		if user_name == "Anonymous":
 			user = None
 		else:
-			user = User.objects.get(first_name=user_name).id
+			try:
+				user = User.objects.get(first_name=user_name)
+				user = user.id
+			except User.DoesNotExist:
+				user = None
 
 		user_ids.append(user)
 		sys.stdout.write(".")
