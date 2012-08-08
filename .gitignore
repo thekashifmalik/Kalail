@@ -68,3 +68,4 @@ venv
 Mac
 .DS_Store
 .python
+celerybeat-schedule

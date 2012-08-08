@@ -262,6 +262,9 @@ else:
     CELERY_REDIS_PORT = redis_url.port
     CELERY_REDIS_DB = 0
 
+# Not Working with Django ORM
+# CELERYBEAT_SCHEDULER = " djcelery.schedulers.DatabaseScheduler"
+
 # Dajax
 DAJAXICE_MEDIA_PREFIX ="dajaxice"
 if socket.gethostname() == 'Kalail-PC':
