@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     'notes',
     'djcelery',
     'dajaxice',
+    'keepalive',
     'raven.contrib.django',
 )
 

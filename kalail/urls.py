@@ -15,6 +15,7 @@ urlpatterns = patterns('',
 	url(r'^blog/', include('blog.urls')),
 	url(r'^versions/', include('versioning.urls')),
     url(r'^notes/', include('notes.urls')),
+    url(r'^keep-alive/', include('keepalive.urls')),
     # Examples:
     # url(r'^$', 'kalail.views.home', name='home'),
     # url(r'^kalail/', include('kalail.foo.urls')),
