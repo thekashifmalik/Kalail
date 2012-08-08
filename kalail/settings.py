@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     'notes',
     'djcelery',
     'dajaxice',
+    'keepalive',
 )
 
 # A sample logging configuration. The only tangible logging
