@@ -12,7 +12,10 @@ import twitter
 
 def index(request):
 	recent_blogposts = Post.objects.all().order_by('-created_on')[:3]
-	recent_tweets = twitter.Api().GetUserTimeline(TWITTER_USERNAME)[:5]
+	try:
+		recent_tweets = twitter.Api().GetUserTimeline(TWITTER_USERNAME)[:5]
+	except Exception:
+		recent_tweets = None
 	return render_to_response('main/index.html', {'recent_blogposts': recent_blogposts, 'recent_tweets': recent_tweets},context_instance=RequestContext(request))
 	#return HttpResponseRedirect(reverse('blog.views.index'))
 
