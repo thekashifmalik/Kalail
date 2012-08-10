@@ -8,20 +8,15 @@ body
 	margin: 0% 0% 0% 0%;
 	height: auto;
 	font-family:"Helvetica", "Arial", sans-serif;
-	background-color: rgb(14,14,14);
-	color: rgb(220,220,220);
+	background-color: rgb(8,10,10);
+	color: rgb(255,250,250);
 }
 
 #body_centered
 {
 	height: auto;
 	width: 900px;
-	margin: 0% auto 0%;
-	background-image: url("../img/background_tile.png");
-	background-repeat: repeat;
-	box-shadow: 0px 0px 15px 10px black;
-	/*Chrome Shadows*/
-	-webkit-box-shadow: 0px 0px 15px 10px black;
+	margin: 0% auto 0%;4
 	overflow: auto;
 }
 
@@ -35,7 +30,7 @@ body
 #header
 {
 	height: 140px;
-	border-bottom: 1px solid white;
+	border-bottom: 1px dotted white;
 }
 
 #header_spaced
@@ -57,14 +52,12 @@ body
 {
 	color: white;
 	text-decoration: none;
-	text-shadow: white 0px 0px 45px;
 }
 
 #header_title_text:hover
 {
 	color: white;
 	text-decoration: none;
-	text-shadow: white 0px 0px 30px;
 }
 
 #header_user_menu
@@ -98,14 +91,14 @@ body
 .header_item_link
 {
 	padding:6px;
-	color: rgb(255,255,255);
+	color: white;
 	text-decoration:  none;
 }
 
 .header_item_link:hover
 {
-	background-color: rgb(255,255,255);
-	color: rgb(0,0,0);
+	background-color: red;
+	color: white;
 }
 
 #footer
@@ -119,7 +112,6 @@ body
 #footer_text
 {
 	color: gray;
-	text-shadow: 0px 0px 5px black;
 	font-size: 75%;
 	margin: 30px auto;
 	text-align: center;
@@ -158,7 +150,7 @@ textarea, input
 {
 	font-family:"Helvetica", "Arial", sans-serif;
 	border-radius: 4px;
-	border: 2px solid white;
+	border: 2px solid black;
 }
 
 textarea:hover, input:hover
@@ -167,7 +159,6 @@ textarea:hover, input:hover
 
 textarea:focus, input:focus
 {
-	box-shadow: 0px 0px 10px white;
 }
 
 p
@@ -177,16 +168,17 @@ p
 a
 {
 	text-decoration: none;
-	color: rgb(160,40,40);
+	color: gray;
 }
 
 
 h1,h2,h3,h4,h5
 {
-	color: rgb(255,255,255);
+	font-family: "Georgia",Serif;
+	color: white;
 }
 
 fieldset
 {
-	border: 1px solid white;
+	border: 1px solid black;
 }
