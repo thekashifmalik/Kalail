@@ -1,0 +1,164 @@
+@background_color: rgb(0, 0, 0);
+@color: rgb(190, 190, 190);
+@color_dark: rgb(90, 90, 90);
+@color_light: rgb(255, 255, 255);
+
+body
+{
+	min-width: 900px;
+	margin: 0;
+	font: 11px Arial, Helvetica, sans-serif;
+	background: @background_color url(../img/background.jpg) no-repeat;
+	color: @color;
+	background-position: center top;
+	position: relative;
+}
+
+#wrapper
+{
+	width: 900px;
+	margin: 0% auto;
+}
+
+
+#header
+{
+	display: inline-block;
+	width: 100%;
+	padding:98px 0px 0px;
+	border-bottom: 1px dotted @color_dark;
+}
+
+#header_menu_block
+{
+	position: fixed;
+	top: 20px;
+	width: 900px;
+	margin: 0% auto;
+}
+
+#header_menu
+{
+	position: relative;
+	float: right;
+	background-color: @color_dark;
+	color: @color_light;
+	opacity: 0.5;
+	text-align: right;
+}
+
+#header_title
+{
+	display: block;
+	width:200px;
+	float:left;
+}
+
+#header_title_text
+{
+	font-weight: normal;
+	color: @color_light;
+	text-decoration: none;
+}
+
+
+#header_nav_block
+{
+	list-style:none;
+	padding:0;
+	margin:0;
+	float:right;
+}
+
+#header_nav_menu
+{
+}
+
+.header_item
+{
+	display: inline;
+	float:left;
+	padding:0 0 0 22px;
+}
+
+.header_item_link
+{
+	padding:6px;
+	color: @color_light;
+	text-decoration:  none;
+}
+
+.header_item_link:hover
+{
+	color: @color_light;
+}
+
+#footer
+{
+	clear: both;
+	width: 900px;
+	margin: 0px auto;
+	height:	40px;
+}
+
+#footer_text
+{
+	color: @color_light;
+	font-size: 75%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+#content
+{
+	padding-bottom: 25px;
+}
+
+#user_authentication_div
+{
+}
+
+#signin_button
+{	
+}
+
+#signout_button
+{
+}
+
+textarea, input
+{
+	font-family:"Helvetica", "Arial", sans-serif;
+	border-radius: 4px;
+	border: 2px solid black;
+}
+
+textarea:hover, input:hover
+{
+}
+
+textarea:focus, input:focus
+{
+}
+
+p
+{
+}
+
+a
+{
+	text-decoration: none;
+	color: @color;
+}
+
+
+
+h1,h2,h3,h4,h5
+{
+	font-weight: normal;
+}
+
+fieldset
+{
+	border: 1px solid black;
+}

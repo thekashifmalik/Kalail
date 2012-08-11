@@ -4,77 +4,75 @@
 {% load dajaxice_templatetags %}
 
 <head>
-    <title>Kalail - {% block title %}{% endblock title %}</title>
+	<title>Kalail - {% block title %}{% endblock title %}</title>
 
-    <meta name="google-site-verification" content="TR47a7iegmO6qw_tERZYsst8N1reeDNNQ4FJ_qw9aAY" />
-    
+	<meta name="google-site-verification" content="TR47a7iegmO6qw_tERZYsst8N1reeDNNQ4FJ_qw9aAY" />
+	
 
-    <link href="{{STATIC_URL}}css/base_styles.css" rel="stylesheet">
-    {% block css %}{% endblock css %}
+	<link rel="stylesheet/less" type="text/css" href="{{STATIC_URL}}css/styles.less">
+	{% block css %}{% endblock css %}
 
-    <script src="{{STATIC_URL}}js/jquery-1.7.2.js"></script>
-    {% dajaxice_js_import "js/dajaxice.core.js" %}
-    {% if not debug %}
-    <script src="{{STATIC_URL}}js/google_analytics.js"></script>
-    {% endif %}
-    {% block js %}{% endblock js %}
-    
-    {% block head %}{% endblock head %}
+	<script src="{{STATIC_URL}}js/less-1.3.0.min.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}js/jquery-1.7.2.js"></script>
+
+	{% dajaxice_js_import "js/dajaxice.core.js" %}
+	{% if not debug %}
+	<script src="{{STATIC_URL}}js/google_analytics.js"></script>
+	{% endif %}
+	{% block js %}{% endblock js %}
+	
+	{% block head %}{% endblock head %}
 </head>
 
 <body>
-    <div id="body_centered">
-        <div id="body_centered_spaced">
-            {# HEADER #}
-            <div id="header">
-                <div id="header_spaced">
-                    <div id="header_title" >
-                        <h1><a id="header_title_text" href= {% url kalail.main.views.index %} >KALAIL</a></h1>
-                    </div>
-        
-                    <div id="header_user_menu">
-                        {% if user.is_authenticated %}
-                            <p>Welcome {{user.email}}!</p>
-                            <a href= {% url kalail.main.views.sign_out %} id="signout_button">Sign out</a>
-                        {% else %}
-                            <p>Welcome Guest!</p>
-                            <a href="{% url kalail.main.views.sign_in %}" id="signin_button">Sign in</a>
-                        {% endif %}
-                    </div>
-        
-                    <div id="header_nav_block">
-                        <ul id="header_nav_menu">
-                            <li class="header_item">
-                                <a class="header_item_link" href= {% url blog.views.index %} >Blog</a>
-                            </li>
-                            <li class="header_item">
-                                <a class="header_item_link" href= {% url kalail.main.views.about %} >About</a>
-                            </li>
-                            <li class="header_item">
-                                <a class="header_item_link" href= {% url kalail.main.views.contact %} >Contact</a>
-                            </li>
-                            <li class="header_item">
-                                <a class="header_item_link" href= {% url versioning.views.index %} >Versions</a>                        
-                            </li>
-                            <li class="header_item">
-                                <a class="header_item_link" href= {% url notes.views.index %} >Notes</a>                        
-                            </li>
-                            <li class="header_item">
-                                <a class="header_item_link" href= {% url keepalive.views.index %} >Keep Alive</a>                        
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            {# CONTENT #}
-            <div id="content">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
-    </div>
-    {# FOOTER #}
-    <div id="footer">
-        <p id="footer_text">Copyright © 2012 Kalail</p>
-    </div>
+	<div id="wrapper">
+		<div id="header">
+			<div id="header_menu_block">
+				<div id="header_menu">
+					{% if user.is_authenticated %}
+						<p>Welcome {{user.email}}!</p>
+						<a href= {% url kalail.main.views.sign_out %} id="signout_button">Sign out</a>
+					{% else %}
+						<p>Welcome Guest!</p>
+						<a href="{% url kalail.main.views.sign_in %}" id="signin_button">Sign in</a>
+					{% endif %}
+				</div>
+			</div>
+			<div id="header_title" >
+				<h1><a id="header_title_text" href= {% url kalail.main.views.index %} >KALAIL</a></h1>
+			</div>
+
+			<div id="header_nav_block">
+				<ul id="header_nav_menu">
+					<li class="header_item">
+						<a class="header_item_link" href= {% url blog.views.index %} >Blog</a>
+					</li>
+					<li class="header_item">
+						<a class="header_item_link" href= {% url kalail.main.views.about %} >About</a>
+					</li>
+					<li class="header_item">
+						<a class="header_item_link" href= {% url kalail.main.views.contact %} >Contact</a>
+					</li>
+					<li class="header_item">
+						<a class="header_item_link" href= {% url versioning.views.index %} >Versions</a>                        
+					</li>
+					<li class="header_item">
+						<a class="header_item_link" href= {% url notes.views.index %} >Notes</a>                        
+					</li>
+					<li class="header_item">
+						<a class="header_item_link" href= {% url keepalive.views.index %} >Keep Alive</a>                        
+					</li>
+				</ul>
+			</div>
+		</div>
+		{# CONTENT #}
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+	</div>
+	{# FOOTER #}
+	<div id="footer">
+		<p id="footer_text">Copyright © 2012 Kalail</p>
+	</div>
 </body>
 </html>
