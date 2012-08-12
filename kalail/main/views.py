@@ -27,12 +27,6 @@ def	sign_in(request):
 	# request.session['next'] = request.REQUEST.get('next', '')
 	return render_to_response('main/sign_in.html', context_instance=RequestContext(request))
 
-def about(request):
-	return render_to_response('main/about.html', context_instance=RequestContext(request))
-
-def contact(request):
-	return render_to_response('main/contact.html', context_instance=RequestContext(request))
-
 def sign_out(request):
     logout(request)
     return HttpResponseRedirect(reverse('kalail.main.views.index'))

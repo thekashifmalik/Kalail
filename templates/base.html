@@ -8,7 +8,8 @@
 
 	<meta name="google-site-verification" content="TR47a7iegmO6qw_tERZYsst8N1reeDNNQ4FJ_qw9aAY" />
 	
-
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet/less" type="text/css" href="{{STATIC_URL}}css/styles.less">
 	{% block css %}{% endblock css %}
 
@@ -27,41 +28,43 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<div id="header_menu_block">
-				<div id="header_menu">
+			<div id="menu_block">
+				<div id="menu">
 					{% if user.is_authenticated %}
 						<p>Welcome {{user.email}}!</p>
-						<a href= {% url kalail.main.views.sign_out %} id="signout_button">Sign out</a>
+						<a href= {% url kalail.main.views.sign_out %}>Sign out</a>
 					{% else %}
-						<p>Welcome Guest!</p>
-						<a href="{% url kalail.main.views.sign_in %}" id="signin_button">Sign in</a>
+						<a href={% url kalail.main.views.sign_in %}>Sign in using Gmail</a>
 					{% endif %}
 				</div>
 			</div>
-			<div id="header_title" >
-				<h1><a id="header_title_text" href= {% url kalail.main.views.index %} >KALAIL</a></h1>
+			<div id="title_block" >
+				<h1 id="title">KALAIL</h1>
 			</div>
 
-			<div id="header_nav_block">
-				<ul id="header_nav_menu">
-					<li class="header_item">
-						<a class="header_item_link" href= {% url blog.views.index %} >Blog</a>
+			<div id="nav_block">
+				<ul id="nav">
+
+					{% block nav %}
+
+					<li>
+						<a class="active" href= {% url kalail.main.views.index %} >Home</a>
 					</li>
-					<li class="header_item">
-						<a class="header_item_link" href= {% url kalail.main.views.about %} >About</a>
+					<li >
+						<a href= {% url blog.views.index %} >Blog</a>
 					</li>
-					<li class="header_item">
-						<a class="header_item_link" href= {% url kalail.main.views.contact %} >Contact</a>
+					<li >
+						<a href= {% url versioning.views.index %} >Versions</a>                        
 					</li>
-					<li class="header_item">
-						<a class="header_item_link" href= {% url versioning.views.index %} >Versions</a>                        
+					<li >
+						<a href= {% url notes.views.index %} >Notes</a>                        
 					</li>
-					<li class="header_item">
-						<a class="header_item_link" href= {% url notes.views.index %} >Notes</a>                        
+					<li >
+						<a href= {% url keepalive.views.index %} >Keep Alive</a>
 					</li>
-					<li class="header_item">
-						<a class="header_item_link" href= {% url keepalive.views.index %} >Keep Alive</a>                        
-					</li>
+
+					{% endblock nav %}
+
 				</ul>
 			</div>
 		</div>
@@ -72,7 +75,7 @@
 	</div>
 	{# FOOTER #}
 	<div id="footer">
-		<p id="footer_text">Copyright © 2012 Kalail</p>
+		<p id="copyright">Copyright © 2012 Kalail</p>
 	</div>
 </body>
 </html>
