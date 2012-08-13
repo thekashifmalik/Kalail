@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Keep Alive{% endblock title %}
+{% block title %} - Keep Alive{% endblock title %}
 {% block css %}
 <link href="{{STATIC_URL}}css/keepalive_styles.css" rel="stylesheet">
 {% endblock css %}
@@ -13,8 +13,11 @@
 	{% csrf_token %}
 	{% if websites %}
 		<input name='website_1' type='text' id='website_1' value={{websites.0}} >
+		<br>
 		<input name='website_2' type='text' id='website_2' value={{websites.1}} >
+		<br>
 		<input name='website_3' type='text' id='website_3' value={{websites.2}} >
+		<br>
 	{% endif %}
 	<input class='keepalive_submit' type='submit' value='Save'/>
 </form>

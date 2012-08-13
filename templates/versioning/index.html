@@ -1,19 +1,41 @@
 {% extends 'base.html' %}
-{% block title %}Versions{% endblock title %}
-{% block content %}
-<h1>Site Versions</h1>
+{% block title %} - Versions{% endblock title %}
 
-<ul>
+{% block nav %}
+
+<li>
+	<a href= {% url kalail.main.views.index %} >Home</a>
+</li>
+<li >
+	<a href= {% url blog.views.index %} >Blog</a>
+</li>
+<li>
+	<a class="active" href= {% url versioning.views.index %} >Versions</a>                        
+</li>
+<li>
+	<p>||</p>                        
+</li>
+<li>
+	<a href= {% url notes.views.index %} >Notes</a>                        
+</li>
+<li>
+	<a href= {% url keepalive.views.index %} >Keep Alive</a>
+</li>
+
+{% endblock nav %}
+
+
+{% block content %}
+<h1>SITE VERSIONS</h1>
+<br>
+
 {% for version in all_versions %}
-<li>
-<h2>{{version.number}}</h2>
-<p><em>{{version.created_on}}</em></p>
-<p>{{version.features|linebreaks}}</p>
-</li>
+	<h2>{{version.number}}</h2>
+	<p><em>{{version.created_on}}</em></p>
+	<p>{{version.features|linebreaks}}</p>
+	<br>
 {% empty %}
-<li>
-<p>There are no versions yet!</p>
-</li>
+	<p>There are no versions yet!</p>
 {% endfor %}
-</ul>
+
 {% endblock content %}

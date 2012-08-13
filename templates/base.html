@@ -4,7 +4,7 @@
 {% load dajaxice_templatetags %}
 
 <head>
-	<title>Kalail - {% block title %}{% endblock title %}</title>
+	<title>Kalail{% block title %}{% endblock title %}</title>
 
 	<meta name="google-site-verification" content="TR47a7iegmO6qw_tERZYsst8N1reeDNNQ4FJ_qw9aAY" />
 	
@@ -53,13 +53,16 @@
 					<li >
 						<a href= {% url blog.views.index %} >Blog</a>
 					</li>
-					<li >
+					<li>
 						<a href= {% url versioning.views.index %} >Versions</a>                        
 					</li>
-					<li >
+					<li>
+						<p>||</p>                        
+					</li>
+					<li>
 						<a href= {% url notes.views.index %} >Notes</a>                        
 					</li>
-					<li >
+					<li>
 						<a href= {% url keepalive.views.index %} >Keep Alive</a>
 					</li>
 

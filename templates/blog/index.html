@@ -1,18 +1,20 @@
-{% extends 'base.html' %}
-{% block title %}Blog{% endblock title %}
+{% extends 'blog/base_blog.html' %}
+{% block title %} - Blog{% endblock title %}
 {% block content %}
-<h1>Blog</h1>
+<h1>BLOG</h1>
 <em><a href={% url rss_feed %}>Subscribe to RSS</a></em>
-<ul>
+<p>I have thoughts. Sometimes I write them down.</p>
+<br>
 {% for post in all_posts %}
-<li>
-<h2><a href= {% url blog.views.show_post post_id=post.id post_slug=post.slug %} >{{post.title}}</a></h2>
-<p>{{post.body|safe|truncatewords_html:25}}</p>
-</li>
-{% empty %}
-<li>
-<p>There are no posts yet!</p>
-</li>
+
+		<h2><a href= {% url blog.views.show_post post_id=post.id post_slug=post.slug %} >{{post.title}}</a></h2>
+		<p>{{post.body|safe|truncatewords_html:25}}</p>
+		<br>
+
+	{% empty %}
+
+			<p>There are no posts yet!</p>
+
 {% endfor %}
-</ul>
+
 {% endblock content %}

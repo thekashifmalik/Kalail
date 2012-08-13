@@ -3,6 +3,11 @@
 @color: rgb(190, 190, 190);
 @color_dark: rgb(90, 90, 90);
 @color_light: rgb(255, 255, 255);
+@size_tiny: 9px;
+@size_small: 12px;
+@size_normal: 14px;
+@size_big: 20px;
+@size_huge: 24px;
 
 // global styles
 body
@@ -11,7 +16,7 @@ body
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-size: @size_normal;
 	text-decoration: none;
 	color: @color;
 	background: @background_color url(../img/background.jpg) no-repeat;
@@ -46,12 +51,13 @@ body
 
 #menu
 {
+	font-size: @size_small;
 	position: relative;
 	float: right;
 	background-color: @color_dark;
 	padding: 10px;
 	border-radius: 11px;
-	opacity: 0.75;
+	opacity: 0.5;
 
 	p, a
 	{
@@ -94,11 +100,12 @@ body
 
 #nav
 {
+	font-size: @size_small;
+
 	li
 	{
 		display: inline;
 		padding:0 0 0 30px;
-
 	}
 
 	a
@@ -118,6 +125,11 @@ body
 		color: @color_light;
 		text-shadow: 0px 0px 2px @color_light;
 	}
+
+	p
+	{
+		display: inline;
+	}
 }
 
 
@@ -132,7 +144,7 @@ body
 #copyright
 {
 	color: @color_dark;
-	font-size: 75%;
+	font-size: @size_tiny;
 	text-align: center;
 }
 
@@ -140,14 +152,14 @@ body
 #content
 {
 	padding: 25px 0px 50px 0px;
-	font-size: 14px;
+	font-size: @size_normal;
 
 	h1
 	{
 		color: @color_dark;
 		font-weight: normal;
 		font-family: 'Oswald', sans-serif;
-		font-size: 24px;
+		font-size: @size_huge;
 	}
 
 	h2
@@ -155,7 +167,12 @@ body
 		color: @color_light;
 		font-weight: normal;
 		font-family: 'Oswald', sans-serif;
-		font-size: 20px;
+		font-size: @size_big;
+
+		a
+		{
+			color: @color_light;
+		}
 	}
 
 	h3
@@ -163,7 +180,12 @@ body
 		color: @color;
 		font-weight: normal;
 		font-family: 'Oswald', sans-serif;
-		font-size: 20px;
+		font-size: @size_big;
+
+		a
+		{
+			color: @color_light;
+		}
 	}
 
 	a
