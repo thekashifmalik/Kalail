@@ -3,6 +3,30 @@
 {% block css %}
 <link href="{{STATIC_URL}}css/keepalive_styles.css" rel="stylesheet">
 {% endblock css %}
+
+{% block nav %}
+
+<li>
+	<a href= {% url kalail.main.views.index %} >Home</a>
+</li>
+<li >
+	<a href= {% url blog.views.index %} >Blog</a>
+</li>
+<li>
+	<a href= {% url versioning.views.index %} >Versions</a>                        
+</li>
+<li>
+	<p>|</p>                        
+</li>
+<li>
+	<a href= {% url notes.views.index %} >Notes</a>                        
+</li>
+<li>
+	<a class="active" href= {% url keepalive.views.index %} >Keep Alive</a>
+</li>
+
+{% endblock nav %}
+
 {% block content %}
 <h1>Keep Alive</h1>
 <p>Want to send periodic requests to your websites so that your dynos don't spin down?</p>
