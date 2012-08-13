@@ -1,16 +1,25 @@
 # Django settings for kalail project.
 import socket
+import os
+import django
+
+# app_env = os.environ["KALAIL_ENV"]
+
+# if app_env == "production":
+
+# else if app_env == "development":
+
+# else:
+
 
 if socket.gethostname() == 'Kalail-PC':
-    DEBUG = TEMPLATE_DEBUG = True
-    STATIC_URL = '/static/'
+    DEBUG = TEMPLATE_DEBUG = False
+    STATIC_URL = 'https://s3.amazonaws.com/kalail_static/'
 else:
     DEBUG = TEMPLATE_DEBUG = False
     STATIC_URL = 'https://s3.amazonaws.com/kalail_static/'
 
 
-import os
-import django
 # calculated paths for django and the site
 # used as starting points for various other paths
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
