@@ -3,6 +3,7 @@ import socket
 import os
 import django
 
+
 app_env = os.environ["KALAIL_ENV"]
 
 if app_env == "production":
