@@ -7,9 +7,10 @@ from requests.exceptions import RequestException
 @periodic_task(run_every = timedelta(seconds=60))
 def send_requests():
 	websites = KeepAliveWebsite.objects.all()
+	headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1'}
 	for website in websites:
 		try:
-			requests.get(website.url, prefetch=True, timeout=30)
+			requests.get(website.url, prefetch=True, headers=headers, timeout=30)
 		except RequestException:
 			pass
 
