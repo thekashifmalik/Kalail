@@ -3,7 +3,6 @@ import socket
 import os
 import django
 
-
 app_env = os.environ["KALAIL_ENV"]
 
 if app_env == "production":
@@ -176,7 +175,7 @@ CACHES = {
 }
 
 # Set up Sessions
-SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached'
 
 # Email Setup
 EMAIL_USE_TLS = True
