@@ -175,7 +175,7 @@ CACHES = {
 }
 
 # Set up Sessions
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 # Email Setup
 EMAIL_USE_TLS = True
