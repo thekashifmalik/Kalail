@@ -20,6 +20,7 @@ gunicorn==0.14.2
 httplib2==0.7.4
 kombu==2.3.2
 mock==0.8.0
+newrelic==1.4.0.137
 oauth2==1.5.211
 psycopg2==2.4.1
 python-dateutil==1.5
