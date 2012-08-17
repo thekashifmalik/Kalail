@@ -9,9 +9,9 @@ def send_requests():
 	websites = KeepAliveWebsite.objects.all()
 	for website in websites:
 		try:
-			requests.get(website.url, timeout=30)
+			requests.get(website.url, prefetch=True, timeout=30)
 		except RequestException:
-			continue
+			pass
 
 @periodic_task(run_every = timedelta(hours=1))
 def remove_unused_websites():
