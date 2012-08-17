@@ -69,3 +69,4 @@ Mac
 .DS_Store
 .python
 celerybeat-schedule
+kalail/scripts/add_secret_vars.bat
