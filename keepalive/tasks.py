@@ -18,5 +18,5 @@ def send_requests():
 def remove_unused_websites():
 	websites = KeepAliveWebsite.objects.all()
 	for website in websites:
-		if website.users.all() == []:
+		if not website.users.all().exists():
 			website.delete()
