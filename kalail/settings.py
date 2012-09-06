@@ -166,14 +166,6 @@ STATICFILES_STORAGE = DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoSto
 AWS_STORAGE_BUCKET_NAME = 'kalail_static'
 AWS_TEMP_STORAGE_BUCKET_NAME = 'kalail_temp'
 
-# Set up Cache
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'localhost:11211',
-    }
-}
-
 # Set up Sessions
 # SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
