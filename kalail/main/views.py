@@ -6,10 +6,9 @@ from django.template import RequestContext
 from django.contrib.auth import logout
 from blog.models import Post
 from kalail.settings import TWITTER_USERNAME
-from django.core.cache import cache
 import twitter
 
-
+@cache_page(1 * 60)
 def index(request):
 	# recent_blogposts = Post.objects.all().order_by('-created_on')[:3]
 	# try:
