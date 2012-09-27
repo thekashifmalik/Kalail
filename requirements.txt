@@ -26,7 +26,6 @@ newrelic==1.4.0.137
 oauth2==1.5.211
 psycopg2==2.4.1
 python-dateutil==1.5
-python-memcached==1.48
 python-openid==2.2.5
 python-twitter==0.8.2
 raven==2.0.3
@@ -35,3 +34,6 @@ requests==0.13.6
 rope==0.9.3
 simplejson==2.4.0
 wsgiref==0.1.2
+pylibmc==1.2.2
+django-pylibmc-sasl==0.2.4
+-e git://github.com/jbalogh/django-debug-cache-panel@2ff3c45be962e08f02928d021c61e7008964020a#egg=django_debug_cache_panel-dev

@@ -47,3 +47,17 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+os.environ['MEMCACHE_SERVERS'] = os.environ.get('MEMCACHIER_SERVERS', '')
+os.environ['MEMCACHE_USERNAME'] = os.environ.get('MEMCACHIER_USERNAME', '')
+os.environ['MEMCACHE_PASSWORD'] = os.environ.get('MEMCACHIER_PASSWORD', '')
+
+# Set up Cache
+CACHES = {
+ 	'default': {
+		'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+		'LOCATION': os.environ.get('MEMCACHIER_SERVERS', ''),
+		'TIMEOUT': 500,
+		'BINARY': True,
+	}
+}
