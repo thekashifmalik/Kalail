@@ -1,5 +1,5 @@
 Kalail
 
-This is the project source for my Django based experimental website 'kalail.com'. The site is currently hosted on Heroku.
+This is the project source for my Django based website 'kalail.com'.
 
 Feel free to use any code that you may find here and give any feedback you may have; I try to make it as readable as I can.
