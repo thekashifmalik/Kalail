@@ -19,7 +19,7 @@ def redirect_to_slug_post(request, post_id):
 	post = get_object_or_404(Post, id=post_id)
 	return HttpResponseRedirect(reverse('blog.views.show_post', args=(post_id, post.slug)))
 
-# @cache_page(1 * 60)
+@cache_page(1 * 60)
 def show_post(request, post_id, post_slug):
 	post = get_object_or_404(Post, id=post_id)
 	if post_slug != post.slug:
