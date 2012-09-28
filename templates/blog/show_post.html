@@ -30,9 +30,7 @@
 </ul>
 <br>
 
- {# action= {% url blog.views.add_comment post_id=post.id %} method="post" #}
-
-<form id="new_comment_form">
+<form id="new_comment_form" onsubmit='return submit_new_comment();'>
 	{% csrf_token %}
 	<fieldset>
 		<legend>Add Comment</legend>
@@ -41,15 +39,11 @@
 				<textarea name='new_comment_text' rows="3" cols="50" id='new_comment_text' ></textarea>
 			</p>
 			<p>
-				<label for='new_comment_author' class="add_comment_label" >Author:</label>
-				<input name='new_comment_author' type='text' id='new_comment_author' readonly="readonly" {% if user.is_authenticated %} value={{user.first_name}} {% else %} value='Anonymous' {% endif %} />
-			</p>
-			<p>
 				<label for='new_comment_captcha' class="add_comment_label" >What color is this box?:</label>
 				<input class='captcha' name ='new_comment_captcha' type='text' id='new_comment_captcha' placeholder="type 'red' here"/>
 			</p>
 		
-			<input class='add_comment_submit' type='button' value='Comment' onclick='Dajaxice.blog.add_comment(add_comment_script, {"post_id":{{post.id}}, "new_comment":decodeURIComponent($("#new_comment_form").serialize().replace(/\+/g,"%20")) })' />
+			<input class='add_comment_submit' type='submit' value='Comment'/>
 	</fieldset>
 </form>
 

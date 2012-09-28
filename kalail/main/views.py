@@ -6,17 +6,12 @@ from django.template import RequestContext
 from django.contrib.auth import logout
 from blog.models import Post
 from kalail.settings import TWITTER_USERNAME
-import twitter
+from django.views.decorators.cache import cache_page
+
 
 @cache_page(1 * 60)
 def index(request):
-	# recent_blogposts = Post.objects.all().order_by('-created_on')[:3]
-	# try:
-	# 	recent_tweets = twitter.Api().GetUserTimeline(TWITTER_USERNAME)[:5]
-	# except Exception:
-	# 	recent_tweets = None
 	return render_to_response('main/index.html',context_instance=RequestContext(request))
-	#return HttpResponseRedirect(reverse('blog.views.index'))
 
 def	sign_in_needed(request):
 	request.session['next'] = request.REQUEST.get('next', '')
