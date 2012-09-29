@@ -1,4 +1,19 @@
 
+function append_new_comment(data)
+{
+	if ('user' in data)
+	{
+		var username = data.user;
+	}
+	else
+	{
+		var username = 'Anonymous';
+	}
+	var new_comment = "<li><p><em>\"" + data.comment + "\"</em></p><p>-" + username + "</p><br></li>";
+	$('#comments').append(new_comment);
+	$('#new_comment_text').val("");
+}
+
 function submit_new_comment()
 {
 	// Validate comment
@@ -28,24 +43,11 @@ function submit_new_comment()
 		}
 	});
 
-	$.post(add_comment_url,
-		{
-			comment: comment,
-		},
-		function(data)
-		{
-			if ('user' in data)
-			{
-				var username = data.user;
-			}
-			else
-			{
-				var username = 'Anonymous';
-			}
-			var new_comment = "<li><p><em>\"" + data.comment + "\"</em></p><p>-" + username + "</p><br></li>";
-			$('#comments').append(new_comment);
-			$('#new_comment_text').val("");
-		});
+	request_data = {
+		comment: comment,
+	};
+	
+	$.post(add_comment_url, request_data, append_new_comment);
 
 	return false
 }
