@@ -4,6 +4,10 @@
 <link href="{{STATIC_URL}}css/notes_styles.css" rel="stylesheet">
 {% endblock css %}
 
+{% block js %}
+<script src="{{STATIC_URL}}js/update_notepad.js"></script>
+{% endblock js %}
+
 {% block nav %}
 
 <li>
@@ -31,10 +35,10 @@
 <h1>Notes</h1>
 <p>Just put some text here, hit save, and you can view and edit it from anywhere!</p>
 
-<form action= {% url notes.views.index %} method="POST">
+<form id='notepad_form' onsubmit='return update_notepad();'>
 	{% csrf_token %}
-	<textarea name='notepad_text' rows="20" cols="100" id='notepad_text'>{{notepad.body}}</textarea>
-	<input class='notepad_submit' type='submit' value='Save'/>
+	<textarea name='notepad_text' id='notepad_text' onkeyup='determine_submit_state()'>{{notepad.body}}</textarea>
+	<input class='notepad_submit' id='notepad_submit' type='submit' value='Save'/>
 </form>
 
 {% endblock content %}

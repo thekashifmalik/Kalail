@@ -7,10 +7,6 @@ from kalail import settings
 from django.contrib import admin
 admin.autodiscover()
 
-# Dajax
-from dajaxice.core import dajaxice_autodiscover
-dajaxice_autodiscover()
-
 urlpatterns = patterns('',
 	url(r'^blog/', include('blog.urls')),
 	url(r'^versions/', include('versioning.urls')),
