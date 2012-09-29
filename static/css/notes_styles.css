@@ -1,7 +1,17 @@
-.notepad_submit
+#notepad_form
+{
+	width: 100%;
+}
+
+#notepad_text
+{
+	width: 100%;
+	height: 300px;
+}
+
+#notepad_submit
 {
 	height: 30px;
 	width: 80px;
-	margin-top: 20px;
-	margin-left: 675px;
+	float: right;
 }

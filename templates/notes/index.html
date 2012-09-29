@@ -37,7 +37,7 @@
 
 <form id='notepad_form' onsubmit='return update_notepad();'>
 	{% csrf_token %}
-	<textarea name='notepad_text' rows="20" cols="100" id='notepad_text' onkeyup='determine_submit_state()'>{{notepad.body}}</textarea>
+	<textarea name='notepad_text' id='notepad_text' onkeyup='determine_submit_state()'>{{notepad.body}}</textarea>
 	<input class='notepad_submit' id='notepad_submit' type='submit' value='Save'/>
 </form>
 
