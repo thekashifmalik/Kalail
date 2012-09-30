@@ -13,6 +13,9 @@ from django.views.decorators.cache import cache_page
 def index(request):
 	return render_to_response('main/index.html',context_instance=RequestContext(request))
 
+def sign_in(request):
+	return render_to_response('main/sign_in.html',context_instance=RequestContext(request))
+
 def sign_out(request):
     logout(request)
     return HttpResponseRedirect(reverse('kalail.main.views.index'))

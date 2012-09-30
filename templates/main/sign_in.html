@@ -1,10 +1,7 @@
 {% extends 'base.html' %}
-{% block title %} - Sign In{% endblock title %}
+{% block title %} - Sign In Needed{% endblock title %}
 {% block content %}
 <h1>Sign in!</h1>
-<p>Signing in is quick and painless.</p>
-
-<div id="login_div">
-    <a href="{% url socialauth_begin 'google' %}">Sign in using Gmail</a>
-</div>
+<p>This site hosts a number of web apps. To use these, simply sign in in the top right corner.</p>
+<p>I use <a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a>, which is both easy to use and very secure.</p>
 {% endblock content %}
