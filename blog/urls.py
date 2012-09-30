@@ -5,6 +5,5 @@ urlpatterns = patterns('blog.views',
 	url(r'^$', 'index'),
 	url(r'^(?P<post_id>\d+)/$', 'redirect_to_slug_post'),
 	url(r'^(?P<post_id>\d+)/(?P<post_slug>[-\w]+)/$', 'show_post'),
-	url(r'^(?P<post_id>\d+)/(?P<post_slug>[-\w]+)/add_comment/$', 'add_comment'),
 	url(r'^rss/$', LatestPostsFeed(), name='rss_feed'),
 	)
