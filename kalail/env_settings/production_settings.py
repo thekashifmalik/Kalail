@@ -61,3 +61,6 @@ CACHES = {
 		'BINARY': True,
 	}
 }
+
+# Browser ID settings
+SITE_URL = 'http://kalail.com'
