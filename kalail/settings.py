@@ -168,7 +168,7 @@ AWS_STORAGE_BUCKET_NAME = 'kalail_static'
 AWS_TEMP_STORAGE_BUCKET_NAME = 'kalail_temp'
 
 # Set up Sessions
-SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 # Email Setup
 EMAIL_USE_TLS = True
