@@ -24,6 +24,24 @@ body
 	position: relative;
 }
 
+a
+{
+	text-decoration: none;
+	color: @color_light;
+}
+
+a.active
+{
+	color: @color_light;
+	text-shadow: 0px 0px 2px @color_light;
+}
+
+a:hover
+{
+	color: @color_light;
+	text-shadow: 0px 0px 2px @color_light;
+}
+
 // main wrapper
 #wrapper
 {
@@ -37,40 +55,20 @@ body
 {
 	display: inline-block;
 	width: 100%;
-	padding: 115px 0px 0px;
+	padding: 20px 0px 0px;
 	border-bottom: 1px dotted @color_dark;
 }
 
-#menu_block
+#sign_in_block
 {
-	position: fixed;
-	margin: 0% auto;
-	top: 10px;
-	width: 900px;
+	width: 100%;
+	height: 100px;
 }
 
-#menu
+#sign_in
 {
-	font-size: @size_small;
-	position: relative;
 	float: right;
-	background-color: @color_dark;
-	padding: 10px;
-	border-radius: 11px;
-	opacity: 0.5;
-
-	p, a
-	{
-		color: @color;
-		text-decoration: none;
-		text-align: right;
-	}
-
-	a:hover
-	{
-		color: @color_light;
-		text-shadow: 0px 0px 2px @color_light;
-	}
+	font-size: @size_small;
 }
 
 #title_block
@@ -191,7 +189,13 @@ body
 	a
 	{
 		text-decoration: none;
-		color: @color;
+		color: @color_light;
+	}
+
+	a.active
+	{
+		color: @color_light;
+		text-shadow: 0px 0px 2px @color_light;
 	}
 
 	a:hover

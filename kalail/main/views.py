@@ -9,17 +9,12 @@ from kalail.settings import TWITTER_USERNAME
 from django.views.decorators.cache import cache_page
 
 
-@cache_page(1 * 60)
+# @cache_page(1 * 60)
 def index(request):
 	return render_to_response('main/index.html',context_instance=RequestContext(request))
 
-def	sign_in_needed(request):
-	request.session['next'] = request.REQUEST.get('next', '')
-	return render_to_response('main/sign_in_needed.html', context_instance=RequestContext(request))
-
-def	sign_in(request):
-	# request.session['next'] = request.REQUEST.get('next', '')
-	return render_to_response('main/sign_in.html', context_instance=RequestContext(request))
+def sign_in(request):
+	return render_to_response('main/sign_in.html',context_instance=RequestContext(request))
 
 def sign_out(request):
     logout(request)

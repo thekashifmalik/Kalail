@@ -3,7 +3,6 @@ from django.views.generic.simple import redirect_to
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from kalail import settings
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
@@ -12,20 +11,12 @@ urlpatterns = patterns('',
 	url(r'^versions/', include('versioning.urls')),
     url(r'^notes/', include('notes.urls')),
     url(r'^keep-alive/', include('keepalive.urls')),
-    # Examples:
-    # url(r'^$', 'kalail.views.home', name='home'),
-    # url(r'^kalail/', include('kalail.foo.urls')),
+    url(r'^browserid/', include('django_browserid.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^%s/' % settings.DAJAXICE_MEDIA_PREFIX, include('dajaxice.urls')),
-
-    url(r'', include('social_auth.urls')),
     url(r'^', include('kalail.main.urls')),
-    #url(r'^$', redirect_to, {'url': '/blog/'}),
 )
 
 urlpatterns += staticfiles_urlpatterns()

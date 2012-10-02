@@ -114,6 +114,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'django_browserid',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -167,7 +168,7 @@ AWS_STORAGE_BUCKET_NAME = 'kalail_static'
 AWS_TEMP_STORAGE_BUCKET_NAME = 'kalail_temp'
 
 # Set up Sessions
-SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 # Email Setup
 EMAIL_USE_TLS = True
@@ -177,15 +178,15 @@ EMAIL_PORT = 587
 
 # Google Authentication
 AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.google.GoogleBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'django_browserid.auth.BrowserIDBackend',
 )
 
 GOOGLE_DISPLAY_NAME = 'Kalail.com'
 
-LOGIN_URL = '/sign_in_needed/'
+LOGIN_URL = '/sign_in/'
 LOGIN_REDIRECT_URL = '/'
-LOGIN_ERROR_URL = '/login-error/'
+LOGIN_REDIRECT_URL_FAILURE = '/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
@@ -195,6 +196,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
+    "django_browserid.context_processors.browserid_form",
 )
 
 # Twitter settings
@@ -204,3 +206,5 @@ TWITTER_CACHE_TIMEOUT = 60 * 5
 # Celery settings
 import djcelery
 djcelery.setup_loader()
+
+BROWSERID_CREATE_USER = True

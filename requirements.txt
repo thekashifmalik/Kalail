@@ -12,9 +12,9 @@ celery==3.0.5
 clint==0.3.1
 dj-database-url==0.2.1
 django-appconf==0.5
+django-browserid==0.6
 django-celery==3.0.4
 django-dajaxice==0.2
--e git://github.com/jbalogh/django-debug-cache-panel#egg=cache_panel
 django-debug-toolbar==0.9.4
 django-extensions==0.8
 django-picklefield==0.2.1

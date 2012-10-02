@@ -6,7 +6,7 @@
 
 	<meta name="google-site-verification" content="TR47a7iegmO6qw_tERZYsst8N1reeDNNQ4FJ_qw9aAY" />
 	
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{STATIC_URL}}css/styles.css">
 	{% if debug %}
@@ -17,25 +17,31 @@
 	
 	<script src="{{STATIC_URL}}js/jquery-1.7.2.js"></script>
 	<script src="{{STATIC_URL}}js/ajax_utils.js"></script>
+	{{ browserid_form.media }}
+
 
 	{% if not debug %}
 	<script src="{{STATIC_URL}}js/google_analytics.js"></script>
 	{% endif %}
 	{% block js %}{% endblock js %}
-	
 	{% block head %}{% endblock head %}
 </head>
 
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<div id="menu_block">
-				<div id="menu">
-					{% if user.is_authenticated %}
-						<p>Welcome {{user.email}}!</p>
-						<a href= {% url kalail.main.views.sign_out %}>Sign out</a>
+			<div id="sign_in_block">
+				<div id="sign_in">
+					{% if not user.is_authenticated %}
+						<a id="browserid" href="#">
+							<img src="{{STATIC_URL}}img/plain_sign_in_black.png"/>
+						</a>
+						<form method="POST" action="{% url browserid_verify %}">
+							{% csrf_token %}
+								{{ browserid_form.as_p }}
+						</form>
 					{% else %}
-						<a href={% url kalail.main.views.sign_in %}>Sign in using Gmail</a>
+						<p>{{user.email}} | <a href="{% url kalail.main.views.sign_out %}">Sign out</a></p>
 					{% endif %}
 				</div>
 			</div>
