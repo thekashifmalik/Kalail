@@ -1,14 +1,15 @@
 {% extends 'blog/base_blog.html' %}
 {% block title %} - Blog{% endblock title %}
 {% block content %}
-<h1>BLOG</h1>
+<!-- <h1>BLOG</h1> -->
+<h1>I have thoughts. Sometimes I write them down.</h1>
 <em><a href={% url rss_feed %}>Subscribe to RSS</a></em>
-<p>I have thoughts. Sometimes I write them down.</p>
+<br>
 <br>
 {% for post in all_posts %}
 
 		<h2><a href= {% url blog.views.show_post post_id=post.id post_slug=post.slug %} >{{post.title}}</a></h2>
-		<p>{{post.body|safe|truncatewords_html:25}}</p>
+		<p>{{post.body|safe|truncatewords_html:90}}</p>
 		<br>
 
 	{% empty %}

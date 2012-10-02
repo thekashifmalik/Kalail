@@ -13,6 +13,12 @@ from django.views.decorators.cache import cache_page
 def index(request):
 	return render_to_response('main/index.html',context_instance=RequestContext(request))
 
+def software_engineer(request):
+	return render_to_response('main/software_engineer.html',context_instance=RequestContext(request))
+
+def film_director(request):
+	return render_to_response('main/film_director.html',context_instance=RequestContext(request))
+
 def sign_in(request):
 	return render_to_response('main/sign_in.html',context_instance=RequestContext(request))
 

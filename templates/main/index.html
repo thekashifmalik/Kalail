@@ -2,41 +2,23 @@
 {% block title %} - Home{% endblock title %}
 
 {% block nav %}
-
-<li>
-	<a class="active" href= {% url kalail.main.views.index %} >Home</a>
-</li>
-<li >
-	<a href= {% url blog.views.index %} >Blog</a>
-</li>
-<li>
-	<a href= {% url versioning.views.index %} >Versions</a>                        
-</li>
-<li>
-	<p>|</p>                        
-</li>
-<li>
-	<a href= {% url notes.views.index %} >Notes</a>                        
-</li>
-<li>
-	<a href= {% url keepalive.views.index %} >Keep Alive</a>
-</li>
-
+{% include 'nav_bar.html' with current_nav='home' %}
 {% endblock nav %}
 
 
 {% block content %}
 
-<h1>HOME</h1>
-<p>Hi there! Welcome to Kalail.</p>
+<h1>Welcome!</h1>
+<p>My Name is Kashif Malik.</p>
+<p>I am a <a href="#">software engineer</a> and <a href="#">film director</a>. They go hand in hand, really.</p>
 <br>
-<h2>What is Kalail?</h2>
-<p>Kalail is a testing ground for web-apps and the like. Every now and then I'm struck with an idea or a need. If I find that this tool doesn't exist, I set out to create it. Kalail is where I host these apps.</p>
+<h2>What is This?</h2>
+<p>This is my blog and occasionally, a testing ground for any web app ideas I may have.</p>
 <br>
-<h2>Can I use these apps?</h2>
-<p> Sure! Feel free to use any app you see on this site. Simply log in using Gmail, and as long as my server isn't overloaded, I'll continue to support any tools you use.</p>
-<br>
-<h2>Who are you?</h2>
+<h2>What Does Kalail Mean?</h2>
+<p>Kalail is how a child would spell out Kal-El, the real name of Superman. That child was me and apparently, I stuck with it.</p>
+<!-- <br> -->
+<!-- <h2>Who are you?</h2>
 <p>A software engineer and filmmaker. They go hand in hand. Really.</p>
-
+ -->
 {% endblock content %}

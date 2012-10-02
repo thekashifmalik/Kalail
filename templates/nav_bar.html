@@ -1,0 +1,23 @@
+<li>
+	<a {% if current_nav == 'home' %}class="active"{% endif %} href= {% url kalail.main.views.index %} >Home</a>
+</li>
+<li >
+	<a {% if current_nav == 'blog' %}class="active"{% endif %} href= {% url blog.views.index %} >Blog</a>
+</li>
+<li >
+	<a {% if current_nav == 'software_engineer' %}class="active"{% endif %} href= {% url kalail.main.views.software_engineer %} >Software Engineer</a>
+</li>
+<li >
+	<a {% if current_nav == 'film_director' %}class="active"{% endif %} href= {% url kalail.main.views.film_director %} >Film Director</a>
+</li>
+{% if user.is_authenticated %}
+	<li>
+		<p>|</p>                        
+	</li>
+	<li>
+		<a {% if current_nav == 'notes' %}class="active"{% endif %} href= {% url notes.views.index %} >Notes</a>                        
+	</li>
+	<li>
+		<a {% if current_nav == 'keep_alive' %}class="active"{% endif %} href= {% url keepalive.views.index %} >Keep Alive</a>
+	</li>
+{% endif %}
