@@ -63,4 +63,4 @@ CACHES = {
 }
 
 # Browser ID settings
-SITE_URL = 'http://kalail.com'
+SITE_URL = 'http://www.kalail.com'
