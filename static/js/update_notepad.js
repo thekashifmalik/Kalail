@@ -49,7 +49,7 @@ function update_notepad_callback(data)
 {
 	if (data == 'OK')
 	{
-		save_current_notepad();
+		save_local_notepad();
 	}
 	else
 	{
@@ -57,10 +57,22 @@ function update_notepad_callback(data)
 	}
 }
 
-function save_current_notepad()
+function save_local_notepad()
 {
 	saved_notepad_text = document.getElementById('notepad_text').value;
 	determine_submit_state();
 }
 
-window.onload = save_current_notepad;
+window.onload = save_local_notepad;
+
+// Set Ctrl + S to update notepad
+$(window).keypress(function(event)
+{
+	if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19))
+	{
+		return true;
+	}
+	update_notepad();
+	event.preventDefault();
+	return false;
+});
