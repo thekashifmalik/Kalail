@@ -40,6 +40,10 @@ CACHES = {
 	}
 }
 
+ALLOWED_HOSTS = [
+	'.kalail.com'
+]
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Browser ID settings
