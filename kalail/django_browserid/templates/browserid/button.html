@@ -1,0 +1,8 @@
+{% load static %}
+<a {% for key, value in attrs.items %}{{ key }}="{{ value }}" {% endfor %}>
+  {% if image_path %}
+    <img src="{% static image_path %}">
+  {% else %}
+    {{ text }}
+  {% endif %}
+</a>
