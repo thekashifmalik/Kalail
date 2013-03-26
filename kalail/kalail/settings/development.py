@@ -41,7 +41,7 @@ CACHES = {
 }
 
 ALLOWED_HOSTS = [
-	'.kalail.com'
+	'kalail-dev.herokuapp.com/'
 ]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
