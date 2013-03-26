@@ -1,5 +1,7 @@
-Django==1.4
-South==0.7.3
+Django==1.5
+Fabric==1.6.0
+South==0.7.6
+Unipath==0.2.1
 Werkzeug==0.8.3
 amqplib==1.0.2
 anyjson==0.3.3
@@ -10,6 +12,7 @@ boto==2.3.0
 celery==3.0.5
 dj-database-url==0.2.1
 django-browserid==0.6
+django-cache-panel==0.1
 django-celery==3.0.4
 django-debug-toolbar==0.9.4
 django-extensions==0.8
@@ -18,12 +21,15 @@ django-pylibmc-sasl==0.2.4
 django-registration==0.8
 django-social-auth==0.6.7
 django-storages==1.1.4
+django-suit==0.1.7
 gunicorn==0.14.2
 httplib2==0.7.4
 kombu==2.3.2
 mock==0.8.0
 oauth2==1.5.211
+paramiko==1.10.0
 psycopg2==2.4.1
+pycrypto==2.6
 pylibmc==1.2.3
 python-dateutil==1.5
 python-openid==2.2.5

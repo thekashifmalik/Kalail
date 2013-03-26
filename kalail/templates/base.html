@@ -36,12 +36,12 @@
 						<a id="browserid" href="#">
 							<img src="{{STATIC_URL}}img/plain_sign_in_black.png"/>
 						</a>
-						<form method="POST" action="{% url browserid_verify %}">
+						<form method="POST" action="{% url 'browserid_verify' %}">
 							{% csrf_token %}
 								{{ browserid_form.as_p }}
 						</form>
 					{% else %}
-						<p>{{user.email}} | <a href="{% url home.views.sign_out %}">Sign out</a></p>
+						<p>{{user.email}} | <a href="{% url 'home.views.sign_out' %}">Sign out</a></p>
 					{% endif %}
 				</div>
 			</div>
