@@ -52,7 +52,6 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     # Contrib
     'django.contrib.auth',
-    'django_browserid',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -67,6 +66,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'social_auth',
     'django_extensions',
+    'django_browserid',
     'storages',
     'djcelery',
     
@@ -138,7 +138,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
-    "django_browserid.context_processors.browserid_form",
+    "django_browserid.context_processors.browserid",
 )
 
 # Celery settings
