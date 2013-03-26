@@ -41,7 +41,8 @@ CACHES = {
 }
 
 ALLOWED_HOSTS = [
-	'kalail-dev.herokuapp.com'
+	'kalail-dev.herokuapp.com',
+	's3.amazonaws.com'
 ]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')

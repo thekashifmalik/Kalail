@@ -124,12 +124,6 @@ AUTHENTICATION_BACKENDS = (
     'django_browserid.auth.BrowserIDBackend',
 )
 
-GOOGLE_DISPLAY_NAME = 'Kalail.com'
-
-# Set up Sessions
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-
-
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.contrib.auth.context_processors.auth",
