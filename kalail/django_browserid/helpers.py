@@ -67,12 +67,19 @@ def browserid_button(text=None, next=None, link_class=None, image=None,
     attrs.setdefault('class', link_class)
     attrs.setdefault('href', href)
     attrs.setdefault('data-next', next)
-    image_path = 'browserid/' + image
-    return render_to_string('browserid/button.html', {
-        'text': text,
-        'attrs': attrs,
-        'image_path': image_path,
-    })
+    # Return image if given
+    if image:
+        image_path = 'browserid/' + image
+        return render_to_string('browserid/image.html', {
+            'attrs': attrs,
+            'image_path': image_path,
+        })
+    # Return normal button
+    else:
+        return render_to_string('browserid/button.html', {
+            'text': text,
+            'attrs': attrs,
+        })
 
 
 def browserid_login(text='Sign in', next=None, link_class='browserid-login',
