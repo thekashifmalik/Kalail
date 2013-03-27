@@ -69,6 +69,7 @@ INSTALLED_APPS = (
     'django_browserid',
     'storages',
     'djcelery',
+    'suit_redactor',
     
     # Project
     'home',
