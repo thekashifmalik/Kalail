@@ -116,29 +116,17 @@ def deploy(environment=None):
 	migrate(env_name)
 	collectstatic(env_name)
 
-
-def compile_coffee():
-	"""Compile coffeescript files to javascript"""
-
-	# Get files with .coffee extension
-	files = local("find static/js -name *.coffee", capture=True).split("\n")
-	for f in files:
-		print('compiling %s...' % f)
-		local('coffee -c %s' % f)
-
 def watch_coffee():
-	"""Watch and automatically compile coffeescript files to javascript""" 
+	"""Watch and compile coffeescript files to javascript""" 
 
-	# Get files with .coffee extension
 	coffee_folder = 'static/coffee'
 	js_folder = 'static/js'
 	print('watching %s for changes' % coffee_folder)
 	local('coffee -o %s -wc %s' % (js_folder, coffee_folder))
 
 def watch_less():
-	"""Watch and automatically compile coffeescript files to javascript"""
+	"""Watch and compile less files to CSS"""
 
-	# Get files with .less extension
 	less_folder = 'static/css'
 	print('watching %s for changes' % less_folder)
 	local('watch-less -d %s -e .css' % less_folder)
