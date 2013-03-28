@@ -17,7 +17,4 @@
 	<li>
 		<a {% if current_nav == 'notes' %}class="active"{% endif %} href="{% url 'notes.views.index' %}" >Notes</a>                        
 	</li>
-	<li>
-		<a {% if current_nav == 'keep_alive' %}class="active"{% endif %} href="{% url 'keepalive.views.index' %}" >Keep Alive</a>
-	</li>
 {% endif %}
