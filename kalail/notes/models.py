@@ -8,4 +8,4 @@ class Notepad(models.Model):
 	created_on = models.DateTimeField(auto_now_add=True)
 
 	def __unicode__(self):
-		return "Notepad of " + self.user.first_name
+		return "Notepad of " + self.user.username
