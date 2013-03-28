@@ -1,5 +1,4 @@
 # Django settings for kalail project.
-import os
 
 # Relative path settings
 from unipath import Path
@@ -140,4 +139,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 import djcelery
 djcelery.setup_loader()
 
+# BrowserID
 BROWSERID_CREATE_USER = True
+# Set username to email
+BROWSERID_USERNAME_ALGO = lambda email: email[:30]
