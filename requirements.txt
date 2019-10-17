@@ -29,7 +29,7 @@ httplib2==0.8
 kombu==2.5.8
 mock==1.0.1
 oauth2==1.5.211
-paramiko==1.10.0
+paramiko==2.0.9
 psycopg2==2.4.6
 pycrypto==2.6
 pylibmc==1.2.3
