@@ -2,7 +2,7 @@ Django==1.5
 Fabric==1.6.0
 South==0.7.6
 Unipath==0.2.1
-Werkzeug==0.8.3
+Werkzeug==0.15.3
 amqp==1.0.10
 amqplib==1.0.2
 anyjson==0.3.3
