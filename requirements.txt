@@ -24,7 +24,7 @@ django-storages==1.1.6
 django-suit==0.1.9
 django-suit-redactor==0.0.2
 fancy-tag==0.2.0
-gunicorn==0.17.2
+gunicorn==19.5.0
 httplib2==0.8
 kombu==2.5.8
 mock==1.0.1
